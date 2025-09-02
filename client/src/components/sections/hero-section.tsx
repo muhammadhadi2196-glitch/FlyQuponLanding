@@ -108,56 +108,69 @@ export default function HeroSection() {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Sleek Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" />
+        {/* Dynamic Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-yellow-400 via-orange-400 to-red-500" />
         
-        {/* Subtle Restaurant Brand Background */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-10 text-8xl">🍔</div>
-          <div className="absolute top-60 right-20 text-6xl">🍕</div>
-          <div className="absolute bottom-40 left-20 text-7xl">🍟</div>
-          <div className="absolute top-40 right-1/4 text-5xl">☕</div>
-          <div className="absolute bottom-20 right-10 text-6xl">🌮</div>
-          <div className="absolute top-80 left-1/3 text-5xl">🥪</div>
+        {/* Floating Food Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-10 text-6xl animate-bounce opacity-20">🍔</div>
+          <div className="absolute top-40 right-20 text-5xl animate-pulse opacity-25">🍕</div>
+          <div className="absolute bottom-32 left-20 text-4xl animate-float opacity-30">🍟</div>
+          <div className="absolute top-60 left-1/3 text-5xl animate-bounce opacity-20" style={{animationDelay: '1s'}}>☕</div>
+          <div className="absolute bottom-20 right-10 text-6xl animate-float opacity-25" style={{animationDelay: '2s'}}>🌮</div>
+          <div className="absolute top-32 right-1/3 text-4xl animate-pulse opacity-30" style={{animationDelay: '0.5s'}}>🥪</div>
         </div>
         
-        {/* Accent Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-accent/10" />
-        
         {/* Hero Content */}
-        <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-          {/* Logo */}
+        <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+          {/* Large Bee Logo */}
           <div className="flex justify-center mb-8">
             <div className="animate-float">
-              <BeeLogo size="lg" className="w-32 h-32 drop-shadow-2xl" />
+              <BeeLogo size="lg" className="w-32 h-32" />
             </div>
           </div>
           
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent">
-            Coupon on the Go
+          <h1 className="text-5xl sm:text-6xl lg:text-8xl font-extrabold mb-6 leading-tight text-white drop-shadow-lg">
+            Coupon on the Go! 🚀
           </h1>
-          <p className="text-xl sm:text-2xl mb-12 text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            All your favorite coupons in one app. No flyers, no hassle — just instant savings.
+          <p className="text-xl sm:text-2xl mb-8 text-white/95 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
+            All your favorite coupons in one app. No flyers, no hassle — just instant savings! 💰
           </p>
           
+          {/* Fun Stats */}
+          <div className="flex justify-center gap-8 mb-8 text-white">
+            <div className="text-center">
+              <div className="text-3xl font-bold">1000+</div>
+              <div className="text-sm opacity-90">Happy Savers</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold">50+</div>
+              <div className="text-sm opacity-90">Restaurant Partners</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold">$500K+</div>
+              <div className="text-sm opacity-90">Money Saved</div>
+            </div>
+          </div>
+          
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
               onClick={scrollToWaitlist}
               size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 transform hover:scale-105 transition-all w-full sm:w-auto text-lg px-10 py-4 rounded-full shadow-2xl font-semibold"
+              className="bg-green-600 text-white hover:bg-green-700 transform hover:scale-110 transition-all w-full sm:w-auto animate-pulse-glow text-lg px-8 py-4 rounded-full shadow-2xl"
               data-testid="button-join-waitlist"
             >
-              Join the Waitlist
+              🎉 Join the Waitlist!
             </Button>
             <Button 
               onClick={scrollToHowItWorks}
               variant="outline"
               size="lg"
-              className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white w-full sm:w-auto text-lg px-10 py-4 rounded-full backdrop-blur-sm transform hover:scale-105 transition-all"
+              className="border-3 border-white text-white hover:bg-white hover:text-orange-500 w-full sm:w-auto text-lg px-8 py-4 rounded-full bg-white/10 backdrop-blur-sm transform hover:scale-105 transition-all"
               data-testid="button-see-how-it-works"
             >
-              See How It Works
+              ✨ See How It Works
             </Button>
           </div>
         </div>
