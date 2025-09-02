@@ -1,0 +1,93 @@
+Create a modern, high-end, mobile-first landing page for a coupon app called FlyQupon. The design should feel fun, energetic, and professional, with a foodie-inspired aesthetic (burgers, pizza, coffee, fries in the background). Use a color palette of green (savings, trust), yellow (energy, highlights), and white (clean background). Style it like UberEats or Doordash but with a playful coupon twist. The vibe should appeal to students, families, and everyday shoppers. The goal is to collect emails for early access and build hype.”
+
+🏠 Website Sections
+1️⃣ Hero Section (Top of Page)
+
+Background: Full-screen foodie image (burgers, fries, pizza) with a soft green/yellow overlay.
+
+Logo: FlyQupon bee logo, top left.
+
+Headline: “Coupon on the Go.”
+
+Subheadline: “All your favorite coupons in one app. No flyers, no hassle — just instant savings.”
+
+Call-to-Action (CTA):
+
+Button: “Join the Waitlist” (green, bold).
+
+Secondary Button: “See How It Works”.
+
+2️⃣ How It Works (3-Step Section)
+
+Use icons for each step:
+
+Browse – Discover coupons from McDonald’s, Tim Hortons, A&W, and more.
+
+Grab – Save coupons instantly with one tap.
+
+Redeem – Show in-store or online, enjoy the savings.
+
+Subheadline: “It’s that simple — save more every day.”
+
+3️⃣ Visual Mockup Showcase
+
+Large smartphone mockup showing app screens (categories, coupon list, redeem button).
+
+Overlay text on each screen:
+
+“All Coupons in One Place”
+
+“Never Miss a Deal Again”
+
+“Built for Students & Families”
+
+4️⃣ Value Proposition / Why Choose FlyQupon
+
+Section with 4 icons + descriptions:
+
+🏷️ Save Daily: Exclusive coupons from your favorite spots.
+
+⚡ Fast & Easy: Grab deals in seconds.
+
+📲 Mobile First: Carry coupons in your pocket.
+
+🐝 Community Driven: Built by students, for everyone.
+
+5️⃣ Call-to-Action Banner
+
+Bold background (yellow or green).
+
+Headline: “Be the First to Try FlyQupon.”
+
+Subheadline: “Join our waitlist and unlock early access before anyone else.”
+
+Email Capture Form: One-line email entry + big green button (“Sign Me Up”).
+
+6️⃣ Testimonials / Social Proof (Optional)
+
+Placeholder section for later:
+
+“Finally, all my coupons in one place!”
+
+“This will save me so much time.”
+
+Add profile icons or avatars.
+
+7️⃣ Footer
+
+Left: FlyQupon logo + slogan (“Coupon on the Go”).
+
+Middle: Links → About | Contact | Privacy Policy.
+
+Right: Social media icons (TikTok, IG, Twitter/X, FB).
+
+Bottom text: © 2025 FlyQupon. All Rights Reserved.
+
+📨 Email Flow
+After Signup → Thank You Message:
+
+Headline: “You’re In!”
+
+Text: “Thanks for joining the FlyQupon waitlist 🎉 You’ll be the first to know when we launch. Keep an eye on your inbox — exclusive early perks are coming.”
+
+Button: “Share with Friends” → encourage referrals.
