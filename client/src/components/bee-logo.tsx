@@ -8,8 +8,8 @@ interface BeeLogoProps {
 export default function BeeLogo({ className = "", size = "md" }: BeeLogoProps) {
   const sizeClasses = {
     sm: "w-8 h-8",
-    md: "w-10 h-10", 
-    lg: "w-12 h-12"
+    md: "w-12 h-12", 
+    lg: "w-16 h-16"
   };
 
   return (
