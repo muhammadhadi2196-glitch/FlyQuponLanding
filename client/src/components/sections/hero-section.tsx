@@ -108,43 +108,69 @@ export default function HeroSection() {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80')"
-          }}
-        />
-        <div className="absolute inset-0 hero-bg" />
-        <div className="absolute inset-0 food-pattern" />
+        {/* Dynamic Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-yellow-400 via-orange-400 to-red-500" />
+        
+        {/* Floating Food Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-10 text-6xl animate-bounce opacity-20">🍔</div>
+          <div className="absolute top-40 right-20 text-5xl animate-pulse opacity-25">🍕</div>
+          <div className="absolute bottom-32 left-20 text-4xl animate-float opacity-30">🍟</div>
+          <div className="absolute top-60 left-1/3 text-5xl animate-bounce opacity-20" style={{animationDelay: '1s'}}>☕</div>
+          <div className="absolute bottom-20 right-10 text-6xl animate-float opacity-25" style={{animationDelay: '2s'}}>🌮</div>
+          <div className="absolute top-32 right-1/3 text-4xl animate-pulse opacity-30" style={{animationDelay: '0.5s'}}>🥪</div>
+        </div>
         
         {/* Hero Content */}
         <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold mb-6 leading-tight animate-fade-in">
-            Coupon on the Go.
+          {/* Large Bee Logo */}
+          <div className="flex justify-center mb-8">
+            <div className="animate-float">
+              <BeeLogo size="lg" className="w-32 h-32" />
+            </div>
+          </div>
+          
+          <h1 className="text-5xl sm:text-6xl lg:text-8xl font-extrabold mb-6 leading-tight text-white drop-shadow-lg">
+            Coupon on the Go! 🚀
           </h1>
-          <p className="text-xl sm:text-2xl mb-8 text-white/90 max-w-2xl mx-auto leading-relaxed">
-            All your favorite coupons in one app. No flyers, no hassle — just instant savings.
+          <p className="text-xl sm:text-2xl mb-8 text-white/95 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
+            All your favorite coupons in one app. No flyers, no hassle — just instant savings! 💰
           </p>
+          
+          {/* Fun Stats */}
+          <div className="flex justify-center gap-8 mb-8 text-white">
+            <div className="text-center">
+              <div className="text-3xl font-bold">1000+</div>
+              <div className="text-sm opacity-90">Happy Savers</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold">50+</div>
+              <div className="text-sm opacity-90">Restaurant Partners</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold">$500K+</div>
+              <div className="text-sm opacity-90">Money Saved</div>
+            </div>
+          </div>
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
               onClick={scrollToWaitlist}
               size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 transform hover:scale-105 transition-all w-full sm:w-auto animate-pulse-glow"
+              className="bg-green-600 text-white hover:bg-green-700 transform hover:scale-110 transition-all w-full sm:w-auto animate-pulse-glow text-lg px-8 py-4 rounded-full shadow-2xl"
               data-testid="button-join-waitlist"
             >
-              Join the Waitlist
+              🎉 Join the Waitlist!
             </Button>
             <Button 
               onClick={scrollToHowItWorks}
               variant="outline"
               size="lg"
-              className="border-2 border-white text-white hover:bg-white hover:text-primary w-full sm:w-auto"
+              className="border-3 border-white text-white hover:bg-white hover:text-orange-500 w-full sm:w-auto text-lg px-8 py-4 rounded-full bg-white/10 backdrop-blur-sm transform hover:scale-105 transition-all"
               data-testid="button-see-how-it-works"
             >
-              See How It Works
+              ✨ See How It Works
             </Button>
           </div>
         </div>
