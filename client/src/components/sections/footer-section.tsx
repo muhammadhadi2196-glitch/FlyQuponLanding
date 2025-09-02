@@ -21,9 +21,8 @@ export default function FooterSection() {
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           {/* Logo & Slogan */}
           <div className="md:col-span-2">
-            <div className="flex items-center space-x-2 mb-4" data-testid="footer-logo">
-              <BeeLogo size="md" />
-              <span className="text-2xl font-bold">FlyQupon</span>
+            <div className="flex items-center mb-4" data-testid="footer-logo">
+              <BeeLogo size="lg" />
             </div>
             <p className="text-lg font-medium text-accent mb-4">Coupon on the Go.</p>
             <p className="text-primary-foreground/70 leading-relaxed max-w-md">

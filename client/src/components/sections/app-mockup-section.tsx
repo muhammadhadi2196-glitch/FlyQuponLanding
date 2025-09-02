@@ -31,9 +31,8 @@ export default function AppMockupSection() {
                   
                   {/* App Header */}
                   <div className="bg-primary px-6 py-4">
-                    <div className="flex items-center space-x-2 mb-2">
+                    <div className="flex items-center mb-2">
                       <BeeLogo size="sm" />
-                      <span className="text-primary-foreground font-bold">FlyQupon</span>
                     </div>
                     <h3 className="text-primary-foreground text-lg font-semibold">All Coupons in One Place</h3>
                   </div>

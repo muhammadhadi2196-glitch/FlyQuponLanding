@@ -1,4 +1,4 @@
-import logoImage from "@assets/ChatGPT Image Sep 2, 2025, 01_41_43 PM_1756845219674.png";
+import logoImage from "@assets/ChatGPT Image Sep 2, 2025, 01_58_47 PM-Photoroom_1756845858958.png";
 
 interface BeeLogoProps {
   className?: string;

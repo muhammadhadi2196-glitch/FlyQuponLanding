@@ -24,9 +24,8 @@ export default function HeroSection() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <div className="flex items-center space-x-2" data-testid="nav-logo">
-              <BeeLogo size="md" />
-              <span className="text-xl font-bold text-primary">FlyQupon</span>
+            <div className="flex items-center" data-testid="nav-logo">
+              <BeeLogo size="lg" />
             </div>
             
             {/* Desktop Menu */}
