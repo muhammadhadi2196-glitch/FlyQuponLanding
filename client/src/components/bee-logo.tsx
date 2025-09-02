@@ -1,4 +1,4 @@
-import logoImage from "@assets/ChatGPT Image Sep 2, 2025, 01_58_47 PM-Photoroom_1756845858958.png";
+import logoImage from "@assets/flyqupon logo_1756854300336.jpg";
 
 interface BeeLogoProps {
   className?: string;
@@ -7,9 +7,9 @@ interface BeeLogoProps {
 
 export default function BeeLogo({ className = "", size = "md" }: BeeLogoProps) {
   const sizeClasses = {
-    sm: "w-8 h-8",
-    md: "w-12 h-12", 
-    lg: "w-16 h-16"
+    sm: "w-12 h-12",
+    md: "w-16 h-16", 
+    lg: "w-20 h-20"
   };
 
   return (
