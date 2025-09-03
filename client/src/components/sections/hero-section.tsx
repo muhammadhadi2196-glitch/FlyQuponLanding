@@ -184,10 +184,12 @@ export default function HeroSection() {
           </div>
           
           {/* Updated Messaging */}
-          <p className="text-lg sm:text-xl lg:text-2xl mb-16 text-gray-700 max-w-4xl mx-auto leading-relaxed font-medium">
-            <span className="text-green-600 font-semibold">No paper, no need to wait for flyers to come in and no forgetting coupons.</span><br className="mb-2"/>
-            We have it all in one app ready for whenever you need it.
-          </p>
+          <div className="mb-16 max-w-4xl mx-auto">
+            <p className="text-lg sm:text-xl lg:text-2xl leading-relaxed font-medium bg-white/90 backdrop-blur-sm rounded-2xl px-8 py-6 shadow-lg text-gray-700">
+              <span className="text-green-600 font-semibold">No paper, no need to wait for flyers to come in and no forgetting coupons.</span><br className="mb-2"/>
+              We have it all in one app ready for whenever you need it.
+            </p>
+          </div>
           
           {/* Modern CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
