@@ -162,15 +162,6 @@ export default function HeroSection() {
             }}
           />
           
-          {/* Small Accent Food Items - Well Spaced */}
-          <div 
-            className="absolute bottom-32 right-32 w-44 h-32 rounded-2xl overflow-hidden shadow-lg transform rotate-12"
-            style={{
-              backgroundImage: `url(${burgerImage})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}
-          />
           
           {/* Subtle Overlay for Professional Look */}
           <div className="absolute inset-0 bg-white/20"></div>
