@@ -168,9 +168,69 @@ export default function HeroSection() {
             }}
           />
           
-          {/* Additional Pizza - Center for Coverage */}
+          {/* Additional Scattered Food Items */}
+          {/* Small Pizza - Top Center */}
           <div 
-            className="absolute top-1/2 left-1/3 w-64 h-64 rounded-full transform rotate-25 overflow-hidden opacity-50"
+            className="absolute top-20 left-1/2 w-48 h-48 rounded-full transform -rotate-20 overflow-hidden opacity-45"
+            style={{
+              backgroundImage: `url(${pizzaImage})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}
+          />
+          
+          {/* Small Burger - Middle Right */}
+          <div 
+            className="absolute top-1/2 right-16 w-56 h-56 rounded-full transform rotate-30 overflow-hidden opacity-40"
+            style={{
+              backgroundImage: `url(${burgerImage})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}
+          />
+          
+          {/* Small Fries - Bottom Left */}
+          <div 
+            className="absolute bottom-20 left-16 w-52 h-52 rounded-2xl transform -rotate-25 overflow-hidden opacity-50"
+            style={{
+              backgroundImage: `url(${friesImage})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}
+          />
+          
+          {/* Small Tacos - Top Right Corner */}
+          <div 
+            className="absolute top-8 right-32 w-60 h-44 rounded-2xl transform rotate-35 overflow-hidden opacity-35"
+            style={{
+              backgroundImage: `url(${tacosImage})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}
+          />
+          
+          {/* Small Shawarma - Bottom Right */}
+          <div 
+            className="absolute bottom-16 right-0 w-64 h-48 rounded-2xl transform -rotate-12 overflow-hidden opacity-45"
+            style={{
+              backgroundImage: `url(${shawarmaImage})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}
+          />
+          
+          {/* Tiny Food Accents */}
+          <div 
+            className="absolute top-72 left-72 w-36 h-36 rounded-full transform rotate-60 overflow-hidden opacity-30"
+            style={{
+              backgroundImage: `url(${burgerImage})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}
+          />
+          
+          <div 
+            className="absolute bottom-32 left-1/2 w-40 h-40 rounded-full transform -rotate-45 overflow-hidden opacity-35"
             style={{
               backgroundImage: `url(${pizzaImage})`,
               backgroundSize: 'cover',
@@ -199,10 +259,9 @@ export default function HeroSection() {
           </h1>
           
           {/* Tagline */}
-          <p className="text-xl sm:text-2xl lg:text-3xl mb-16 text-white max-w-4xl mx-auto leading-relaxed drop-shadow-lg">
-            All your favorite restaurant deals in one app. 
-            <span className="text-yellow-300 font-bold"> No paper clutter, no expiration worries</span> — 
-            just instant savings wherever you go.
+          <p className="text-xl sm:text-2xl lg:text-3xl mb-16 text-white max-w-5xl mx-auto leading-relaxed drop-shadow-lg">
+            <span className="text-yellow-300 font-bold">No paper, no need to wait for flyers to come in and no forgetting coupons.</span><br className="hidden sm:block"/>
+            We have it all in one app ready for whenever you need it.
           </p>
           
           {/* CTA Buttons */}
