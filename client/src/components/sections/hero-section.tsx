@@ -111,26 +111,22 @@ export default function HeroSection() {
         </div>
       )}
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Futuristic Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-gray-800 to-black" />
+      {/* Hero Section - Sleek Professional Design */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 to-white">
         
-        {/* Real Food Photography Background */}
+        {/* Professional Food Catalog Background - Non-Overlapping */}
         <div className="absolute inset-0">
-          {/* Pizza - Top Left */}
+          {/* Top Row - Pizza & Burger */}
           <div 
-            className="absolute top-0 left-0 w-96 h-80 transform rotate-12 overflow-hidden opacity-70"
+            className="absolute top-16 left-16 w-64 h-48 rounded-2xl overflow-hidden shadow-2xl transform rotate-3"
             style={{
               backgroundImage: `url(${pizzaImage})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center'
             }}
           />
-          
-          {/* Burger - Top Right */}
           <div 
-            className="absolute top-16 right-0 w-88 h-72 rounded-2xl transform -rotate-8 overflow-hidden opacity-75"
+            className="absolute top-20 right-20 w-60 h-44 rounded-2xl overflow-hidden shadow-2xl transform -rotate-6"
             style={{
               backgroundImage: `url(${burgerImage})`,
               backgroundSize: 'cover',
@@ -138,19 +134,17 @@ export default function HeroSection() {
             }}
           />
           
-          {/* Shawarma - Middle Left */}
+          {/* Middle Row - Shawarma & Fries */}
           <div 
-            className="absolute top-1/3 left-8 w-80 h-64 rounded-2xl transform rotate-6 overflow-hidden opacity-70"
+            className="absolute top-1/2 left-8 w-56 h-40 rounded-2xl overflow-hidden shadow-2xl transform rotate-8"
             style={{
               backgroundImage: `url(${shawarmaImage})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center'
             }}
           />
-          
-          {/* French Fries - Right Side */}
           <div 
-            className="absolute top-2/3 right-8 w-76 h-88 rounded-2xl transform -rotate-15 overflow-hidden opacity-80"
+            className="absolute top-1/2 right-12 w-52 h-68 rounded-2xl overflow-hidden shadow-2xl transform -rotate-4"
             style={{
               backgroundImage: `url(${friesImage})`,
               backgroundSize: 'cover',
@@ -158,9 +152,9 @@ export default function HeroSection() {
             }}
           />
           
-          {/* Tacos - Bottom Center */}
+          {/* Bottom Row - Tacos */}
           <div 
-            className="absolute bottom-8 left-1/4 w-84 h-64 rounded-2xl transform rotate-8 overflow-hidden opacity-75"
+            className="absolute bottom-24 left-1/3 w-68 h-44 rounded-2xl overflow-hidden shadow-2xl transform rotate-5"
             style={{
               backgroundImage: `url(${tacosImage})`,
               backgroundSize: 'cover',
@@ -168,30 +162,25 @@ export default function HeroSection() {
             }}
           />
           
-          {/* Additional Scattered Food Items */}
-          {/* Small Pizza - Top Center */}
+          {/* Small Accent Food Items - Well Spaced */}
           <div 
-            className="absolute top-20 left-1/2 w-48 h-48 rounded-full transform -rotate-20 overflow-hidden opacity-45"
+            className="absolute top-32 left-1/2 w-40 h-40 rounded-full overflow-hidden shadow-lg transform -rotate-12"
             style={{
               backgroundImage: `url(${pizzaImage})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center'
             }}
           />
-          
-          {/* Small Burger - Middle Right */}
           <div 
-            className="absolute top-1/2 right-16 w-56 h-56 rounded-full transform rotate-30 overflow-hidden opacity-40"
+            className="absolute bottom-32 right-32 w-44 h-32 rounded-2xl overflow-hidden shadow-lg transform rotate-12"
             style={{
               backgroundImage: `url(${burgerImage})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center'
             }}
           />
-          
-          {/* Small Fries - Bottom Left */}
           <div 
-            className="absolute bottom-20 left-16 w-52 h-52 rounded-2xl transform -rotate-25 overflow-hidden opacity-50"
+            className="absolute bottom-20 left-20 w-36 h-36 rounded-full overflow-hidden shadow-lg transform -rotate-18"
             style={{
               backgroundImage: `url(${friesImage})`,
               backgroundSize: 'cover',
@@ -199,89 +188,50 @@ export default function HeroSection() {
             }}
           />
           
-          {/* Small Tacos - Top Right Corner */}
-          <div 
-            className="absolute top-8 right-32 w-60 h-44 rounded-2xl transform rotate-35 overflow-hidden opacity-35"
-            style={{
-              backgroundImage: `url(${tacosImage})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}
-          />
-          
-          {/* Small Shawarma - Bottom Right */}
-          <div 
-            className="absolute bottom-16 right-0 w-64 h-48 rounded-2xl transform -rotate-12 overflow-hidden opacity-45"
-            style={{
-              backgroundImage: `url(${shawarmaImage})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}
-          />
-          
-          {/* Tiny Food Accents */}
-          <div 
-            className="absolute top-72 left-72 w-36 h-36 rounded-full transform rotate-60 overflow-hidden opacity-30"
-            style={{
-              backgroundImage: `url(${burgerImage})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}
-          />
-          
-          <div 
-            className="absolute bottom-32 left-1/2 w-40 h-40 rounded-full transform -rotate-45 overflow-hidden opacity-35"
-            style={{
-              backgroundImage: `url(${pizzaImage})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}
-          />
-          
-          {/* Dark Overlay for Text Readability */}
-          <div className="absolute inset-0 bg-black/50"></div>
+          {/* Subtle Overlay for Professional Look */}
+          <div className="absolute inset-0 bg-white/20"></div>
         </div>
         
-        {/* Geometric Patterns */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-          <div className="absolute top-3/4 right-1/4 w-3 h-3 bg-yellow-400 rounded-full animate-bounce"></div>
-          <div className="absolute bottom-1/4 left-1/3 w-2 h-2 bg-orange-400 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-        </div>
-        
-        {/* Clean Hero Content - No Logo */}
-        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-          {/* Main Headline */}
-          <h1 className="text-6xl sm:text-7xl lg:text-9xl font-extrabold mb-8 leading-tight">
-            <span className="bg-gradient-to-r from-green-400 via-yellow-400 to-white bg-clip-text text-transparent drop-shadow-2xl">
-              Coupons On The Go
+        {/* Sleek Hero Content */}
+        <div className="relative z-10 text-center px-6 sm:px-8 lg:px-12 max-w-6xl mx-auto">
+          {/* Modern Sleek Headline */}
+          <h1 className="text-5xl sm:text-6xl lg:text-8xl font-bold mb-12 leading-tight tracking-tight">
+            <span className="bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">
+              FlyQupon
             </span>
           </h1>
           
-          {/* Tagline */}
-          <p className="text-xl sm:text-2xl lg:text-3xl mb-16 text-white max-w-5xl mx-auto leading-relaxed drop-shadow-lg">
-            <span className="text-yellow-300 font-bold">No paper, no need to wait for flyers to come in and no forgetting coupons.</span><br className="hidden sm:block"/>
+          {/* Clean Modern Subtitle */}
+          <div className="mb-8">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-gray-800 mb-6 leading-relaxed">
+              Instant Access to Restaurant Deals
+            </h2>
+          </div>
+          
+          {/* Updated Messaging */}
+          <p className="text-lg sm:text-xl lg:text-2xl mb-16 text-gray-700 max-w-4xl mx-auto leading-relaxed font-medium">
+            <span className="text-green-600 font-semibold">No paper, no need to wait for flyers to come in and no forgetting coupons.</span><br className="mb-2"/>
             We have it all in one app ready for whenever you need it.
           </p>
           
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
+          {/* Modern CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Button 
               onClick={scrollToWaitlist}
               size="lg"
-              className="bg-gradient-to-r from-green-500 to-green-600 text-white hover:from-green-600 hover:to-green-700 transform hover:scale-110 transition-all text-2xl px-16 py-8 rounded-full shadow-2xl font-bold border border-green-400"
+              className="bg-green-600 hover:bg-green-700 text-white text-lg px-12 py-4 rounded-lg shadow-lg font-semibold transition-all hover:shadow-xl"
               data-testid="button-join-waitlist"
             >
-              Join the Waitlist
+              Join Early Access
             </Button>
             <Button 
               onClick={scrollToHowItWorks}
               variant="outline"
               size="lg"
-              className="border-3 border-white text-white hover:bg-white hover:text-gray-900 text-2xl px-16 py-8 rounded-full transform hover:scale-110 transition-all bg-white/10 backdrop-blur-sm font-bold shadow-2xl"
+              className="border-2 border-gray-300 text-gray-800 hover:bg-gray-50 text-lg px-12 py-4 rounded-lg font-semibold transition-all hover:shadow-lg"
               data-testid="button-see-how-it-works"
             >
-              See How It Works
+              Learn More
             </Button>
           </div>
         </div>
