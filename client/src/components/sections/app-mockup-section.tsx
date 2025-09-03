@@ -1,5 +1,8 @@
 import { Check } from "lucide-react";
 import BeeLogo from "@/components/bee-logo";
+import mcdonaldsLogo from "@assets/dnaks logo_1756874415179.png";
+import timHortonsLogo from "@assets/Tim-Hortons-logo_1756874415180.png";
+import popeyesLogo from "@assets/pops logo_1756874415180.png";
 
 const features = [
   "Real-time coupon updates",
@@ -30,41 +33,59 @@ export default function AppMockupSection() {
                   </div>
                   
                   {/* App Header */}
-                  <div className="bg-primary px-6 py-4">
-                    <div className="flex items-center mb-2">
-                      <BeeLogo size="sm" />
+                  <div className="bg-white px-6 py-6 border-b border-gray-200">
+                    <div className="flex justify-center mb-3">
+                      <BeeLogo size="md" className="w-20 h-20" />
                     </div>
-                    <h3 className="text-primary-foreground text-lg font-semibold">All Coupons in One Place</h3>
+                    <h3 className="text-gray-800 text-lg font-bold text-center">Your Favorite Deals</h3>
                   </div>
                   
-                  {/* Categories */}
-                  <div className="p-4 space-y-3">
-                    <div className="flex space-x-3 overflow-x-auto">
-                      <div className="bg-accent text-accent-foreground px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap">🍔 Fast Food</div>
-                      <div className="bg-muted text-muted-foreground px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap">☕ Coffee</div>
-                      <div className="bg-muted text-muted-foreground px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap">🍕 Pizza</div>
+                  {/* Restaurant Partners */}
+                  <div className="p-4 space-y-4">
+                    <h4 className="text-sm font-bold text-gray-800 mb-4">Partner Restaurants</h4>
+                    
+                    {/* Brand Logos Grid */}
+                    <div className="grid grid-cols-2 gap-3 mb-4">
+                      <div className="bg-red-50 border border-red-200 rounded-lg p-3 flex items-center justify-center h-16">
+                        <img 
+                          src={mcdonaldsLogo}
+                          alt="McDonald's"
+                          className="w-12 h-8 object-contain"
+                        />
+                      </div>
+                      <div className="bg-red-50 border border-red-200 rounded-lg p-3 flex items-center justify-center h-16">
+                        <img 
+                          src={timHortonsLogo}
+                          alt="Tim Hortons"
+                          className="w-16 h-6 object-contain"
+                        />
+                      </div>
+                      <div className="bg-orange-50 border border-orange-200 rounded-lg p-3 flex items-center justify-center h-16">
+                        <img 
+                          src={popeyesLogo}
+                          alt="Popeyes"
+                          className="w-14 h-10 object-contain"
+                        />
+                      </div>
+                      <div className="bg-green-50 border border-green-200 rounded-lg p-3 flex items-center justify-center h-16">
+                        <div className="text-sm font-black text-green-800">A&W</div>
+                      </div>
                     </div>
                     
-                    {/* Coupon Cards */}
-                    <div className="space-y-3">
-                      <div className="bg-card border border-border rounded-lg p-4">
-                        <div className="flex justify-between items-start mb-2">
-                          <span className="text-sm font-bold text-primary">McDonald's</span>
-                          <span className="bg-accent text-accent-foreground px-2 py-1 rounded text-xs font-bold">25% OFF</span>
+                    {/* Active Deals */}
+                    <div className="space-y-2">
+                      <div className="bg-green-100 border border-green-300 rounded-lg p-3">
+                        <div className="flex justify-between items-center">
+                          <div className="text-xs font-bold text-green-800">25% OFF Big Mac</div>
+                          <div className="bg-green-600 text-white px-2 py-1 rounded text-xs font-bold">LIVE</div>
                         </div>
-                        <p className="text-xs text-muted-foreground">Big Mac Combo</p>
                       </div>
                       
-                      <div className="bg-card border border-border rounded-lg p-4">
-                        <div className="flex justify-between items-start mb-2">
-                          <span className="text-sm font-bold text-primary">Tim Hortons</span>
-                          <span className="bg-accent text-accent-foreground px-2 py-1 rounded text-xs font-bold">$2 OFF</span>
+                      <div className="bg-yellow-100 border border-yellow-300 rounded-lg p-3">
+                        <div className="flex justify-between items-center">
+                          <div className="text-xs font-bold text-yellow-800">$2 OFF Coffee</div>
+                          <div className="bg-yellow-600 text-white px-2 py-1 rounded text-xs font-bold">NEW</div>
                         </div>
-                        <p className="text-xs text-muted-foreground">Double Double</p>
-                      </div>
-                      
-                      <div className="bg-primary text-primary-foreground rounded-lg p-4 text-center">
-                        <span className="text-sm font-bold">Never Miss a Deal Again</span>
                       </div>
                     </div>
                   </div>
