@@ -23,7 +23,7 @@ export default function FooterSection() {
           <div className="md:col-span-2">
             <div className="flex items-center mb-4" data-testid="footer-logo">
               <div className="bg-white rounded-lg px-4 py-2 shadow-md">
-                <BeeLogo size="xl" />
+                <BeeLogo size="md" />
               </div>
             </div>
             <p className="text-lg font-medium text-accent mb-4">Coupon on the Go.</p>
