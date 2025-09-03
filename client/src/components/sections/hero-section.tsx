@@ -111,22 +111,66 @@ export default function HeroSection() {
         {/* Futuristic Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-gray-800 to-black" />
         
-        {/* Subtle Restaurant Brand Collage */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-16 w-20 h-20 bg-red-500 rounded-lg flex items-center justify-center transform rotate-12">
-            <span className="text-white font-bold text-xs">M</span>
+        {/* Authentic Coupon Collage */}
+        <div className="absolute inset-0 opacity-15 blur-sm">
+          {/* McDonald's Coupon */}
+          <div className="absolute top-16 left-12 w-48 h-32 bg-red-600 rounded-lg transform rotate-12 shadow-lg">
+            <div className="p-3 text-white">
+              <div className="text-xs font-bold mb-1">McDonald's</div>
+              <div className="text-2xl font-black">25% OFF</div>
+              <div className="text-xs">Big Mac Combo</div>
+              <div className="text-xs mt-2">Valid until 12/31</div>
+            </div>
           </div>
-          <div className="absolute top-32 right-24 w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center transform -rotate-6">
-            <span className="text-white font-bold text-xs">A&W</span>
+          
+          {/* Tim Hortons Coupon */}
+          <div className="absolute top-40 right-20 w-44 h-28 bg-red-800 rounded-lg transform -rotate-6 shadow-lg">
+            <div className="p-3 text-white">
+              <div className="text-xs font-bold mb-1">Tim Hortons</div>
+              <div className="text-xl font-black">$2 OFF</div>
+              <div className="text-xs">Any Large Coffee</div>
+              <div className="text-xs mt-1">Limited time</div>
+            </div>
           </div>
-          <div className="absolute bottom-40 left-20 w-18 h-18 bg-red-700 rounded-lg flex items-center justify-center transform rotate-6">
-            <span className="text-white font-bold text-xs">TH</span>
+          
+          {/* A&W Coupon */}
+          <div className="absolute bottom-36 left-24 w-40 h-30 bg-orange-600 rounded-lg transform rotate-8 shadow-lg">
+            <div className="p-3 text-white">
+              <div className="text-xs font-bold mb-1">A&W</div>
+              <div className="text-xl font-black">BUY 1</div>
+              <div className="text-xl font-black">GET 1</div>
+              <div className="text-xs">Teen Burger</div>
+            </div>
           </div>
-          <div className="absolute top-60 right-16 w-20 h-20 bg-green-700 rounded-lg flex items-center justify-center transform -rotate-12">
-            <span className="text-white font-bold text-xs">SUB</span>
+          
+          {/* Pizza Hut Coupon */}
+          <div className="absolute top-56 right-16 w-46 h-32 bg-red-700 rounded-lg transform -rotate-12 shadow-lg">
+            <div className="p-3 text-white">
+              <div className="text-xs font-bold mb-1">Pizza Hut</div>
+              <div className="text-2xl font-black">30% OFF</div>
+              <div className="text-xs">Large Pizza</div>
+              <div className="text-xs mt-2">Online orders only</div>
+            </div>
           </div>
-          <div className="absolute bottom-32 right-32 w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center transform rotate-45">
-            <span className="text-white font-bold text-xs">PP</span>
+          
+          {/* Popeyes Coupon */}
+          <div className="absolute bottom-24 right-28 w-42 h-30 bg-orange-500 rounded-lg transform rotate-15 shadow-lg">
+            <div className="p-3 text-white">
+              <div className="text-xs font-bold mb-1">Popeyes</div>
+              <div className="text-xl font-black">$5 OFF</div>
+              <div className="text-xs">Family Meal</div>
+              <div className="text-xs mt-1">Dine-in only</div>
+            </div>
+          </div>
+          
+          {/* Subway Coupon */}
+          <div className="absolute top-72 left-32 w-40 h-28 bg-green-600 rounded-lg transform -rotate-8 shadow-lg">
+            <div className="p-3 text-white">
+              <div className="text-xs font-bold mb-1">Subway</div>
+              <div className="text-xl font-black">FREE</div>
+              <div className="text-xs">Cookie w/ Sub</div>
+              <div className="text-xs mt-1">Any footlong</div>
+            </div>
           </div>
         </div>
         

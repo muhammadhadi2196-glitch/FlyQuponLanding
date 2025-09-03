@@ -6,7 +6,7 @@ const testimonials = [
     quote: "Finally, all my coupons in one place! No more digging through my wallet.",
     author: "Sarah M.",
     role: "University Student",
-    avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b742?w=150&h=150&fit=crop&crop=face"
+    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face"
   },
   {
     quote: "This will save me so much time. Love the simple interface!",
