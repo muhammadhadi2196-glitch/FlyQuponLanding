@@ -22,7 +22,9 @@ export default function FooterSection() {
           {/* Logo & Slogan */}
           <div className="md:col-span-2">
             <div className="flex items-center mb-4" data-testid="footer-logo">
-              <BeeLogo size="lg" />
+              <div className="bg-white rounded-lg p-3 shadow-md">
+                <BeeLogo size="lg" />
+              </div>
             </div>
             <p className="text-lg font-medium text-accent mb-4">Coupon on the Go.</p>
             <p className="text-primary-foreground/70 leading-relaxed max-w-md">
