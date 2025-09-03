@@ -111,92 +111,64 @@ export default function HeroSection() {
         {/* Futuristic Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-gray-800 to-black" />
         
-        {/* Restaurant Photo Background Collage */}
-        <div className="absolute inset-0 opacity-25">
-          {/* McDonald's Restaurant */}
+        {/* Immersive Food Photography Background */}
+        <div className="absolute inset-0">
+          {/* Large Pizza Background - Top Left */}
           <div 
-            className="absolute top-12 left-8 w-72 h-48 rounded-xl shadow-2xl transform rotate-12 overflow-hidden border-2 border-yellow-400"
+            className="absolute top-0 left-0 w-96 h-72 transform rotate-12 overflow-hidden opacity-60"
             style={{
-              backgroundImage: `linear-gradient(135deg, #dc2626 0%, #fbbf24 100%)`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
+              backgroundImage: `url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><defs><radialGradient id="pizza" cx="50%" cy="50%"><stop offset="0%" stop-color="%23FEF3C7"/><stop offset="30%" stop-color="%23FCD34D"/><stop offset="60%" stop-color="%23F59E0B"/><stop offset="100%" stop-color="%23D97706"/></radialGradient></defs><circle cx="200" cy="150" r="140" fill="url(%23pizza)"/><circle cx="120" cy="100" r="15" fill="%23DC2626"/><circle cx="280" cy="130" r="18" fill="%23059669"/><circle cx="200" cy="190" r="20" fill="%23DC2626"/><circle cx="160" cy="80" r="12" fill="%23FBBF24"/><circle cx="240" cy="200" r="16" fill="%23059669"/><circle cx="100" cy="180" r="14" fill="%23DC2626"/><circle cx="300" cy="90" r="13" fill="%23FBBF24"/><circle cx="180" cy="120" r="17" fill="%23059669"/></svg>')`,
+              backgroundSize: 'cover'
             }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-red-600/80 to-yellow-500/80"></div>
-            <div className="relative p-6 text-white h-full flex flex-col justify-center">
-              <div className="text-2xl font-black mb-4 text-yellow-300">McDONALD'S</div>
-              <div className="text-5xl font-black text-yellow-400">25% OFF</div>
-              <div className="text-lg font-bold mt-2">Big Mac Combo</div>
-            </div>
-          </div>
+          />
           
-          {/* Tim Hortons Restaurant */}
+          {/* Gourmet Burger - Top Right */}
           <div 
-            className="absolute top-24 right-12 w-68 h-44 rounded-xl shadow-2xl transform -rotate-8 overflow-hidden border-2 border-red-400"
+            className="absolute top-10 right-8 w-84 h-64 rounded-2xl transform -rotate-8 overflow-hidden opacity-70"
             style={{
-              backgroundImage: `linear-gradient(135deg, #b91c1c 0%, #dc2626 100%)`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
+              backgroundImage: `url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 280"><defs><linearGradient id="bun" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="%23F59E0B"/><stop offset="100%" stop-color="%23D97706"/></linearGradient></defs><ellipse cx="175" cy="60" rx="140" ry="45" fill="url(%23bun)"/><rect x="35" y="90" width="280" height="25" fill="%23059669"/><rect x="30" y="120" width="290" height="35" fill="%23DC2626"/><rect x="40" y="160" width="270" height="20" fill="%23FBBF24"/><rect x="45" y="185" width="260" height="15" fill="%23B91C1C"/><ellipse cx="175" cy="220" rx="150" ry="50" fill="url(%23bun)"/></svg>')`,
+              backgroundSize: 'cover'
             }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-red-800/80 to-red-600/80"></div>
-            <div className="relative p-6 text-white h-full flex flex-col justify-center">
-              <div className="text-2xl font-black mb-4">TIM HORTONS</div>
-              <div className="text-4xl font-black text-yellow-300">$2 OFF</div>
-              <div className="text-lg font-bold mt-2">Large Coffee</div>
-            </div>
-          </div>
+          />
           
-          {/* Popeyes Restaurant */}
+          {/* Shawarma Wrap - Middle Left */}
           <div 
-            className="absolute bottom-28 left-16 w-64 h-46 rounded-xl shadow-2xl transform rotate-6 overflow-hidden border-2 border-orange-400"
+            className="absolute top-1/3 left-0 w-88 h-56 rounded-2xl transform rotate-6 overflow-hidden opacity-65"
             style={{
-              backgroundImage: `linear-gradient(135deg, #ea580c 0%, #dc2626 100%)`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
+              backgroundImage: `url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 240"><defs><linearGradient id="wrap" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="%23FEF3C7"/><stop offset="100%" stop-color="%23FCD34D"/></linearGradient></defs><rect width="360" height="240" fill="url(%23wrap)"/><rect x="60" y="90" width="240" height="60" rx="30" fill="%23D97706"/><rect x="70" y="95" width="220" height="15" fill="%23DC2626"/><rect x="75" y="115" width="210" height="20" fill="%23059669"/><rect x="80" y="140" width="200" height="15" fill="%23FBBF24"/></svg>')`,
+              backgroundSize: 'cover'
             }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-600/80 to-red-600/80"></div>
-            <div className="relative p-6 text-white h-full flex flex-col justify-center">
-              <div className="text-2xl font-black mb-4 text-orange-200">POPEYES</div>
-              <div className="text-4xl font-black text-orange-300">$5 OFF</div>
-              <div className="text-lg font-bold mt-2">Family Meal</div>
-            </div>
-          </div>
+          />
           
-          {/* Pizza Hut Restaurant */}
+          {/* Golden French Fries - Right Side */}
           <div 
-            className="absolute top-40 right-8 w-70 h-48 rounded-xl shadow-2xl transform -rotate-15 overflow-hidden border-2 border-green-400"
+            className="absolute top-2/3 right-0 w-72 h-80 rounded-2xl transform -rotate-15 overflow-hidden opacity-75"
             style={{
-              backgroundImage: `linear-gradient(135deg, #b91c1c 0%, #16a34a 100%)`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
+              backgroundImage: `url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 350"><defs><linearGradient id="fries" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="%23FCD34D"/><stop offset="100%" stop-color="%23F59E0B"/></linearGradient></defs><rect width="300" height="350" fill="%23B45309"/><rect x="50" y="120" width="15" height="200" fill="url(%23fries)" rx="7"/><rect x="75" y="100" width="15" height="220" fill="url(%23fries)" rx="7"/><rect x="100" y="110" width="15" height="210" fill="url(%23fries)" rx="7"/><rect x="125" y="90" width="15" height="230" fill="url(%23fries)" rx="7"/><rect x="150" y="105" width="15" height="215" fill="url(%23fries)" rx="7"/><rect x="175" y="95" width="15" height="225" fill="url(%23fries)" rx="7"/><rect x="200" y="115" width="15" height="205" fill="url(%23fries)" rx="7"/><rect x="225" y="85" width="15" height="235" fill="url(%23fries)" rx="7"/></svg>')`,
+              backgroundSize: 'cover'
             }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-red-700/80 to-green-600/80"></div>
-            <div className="relative p-6 text-white h-full flex flex-col justify-center">
-              <div className="text-2xl font-black mb-4 text-green-200">PIZZA HUT</div>
-              <div className="text-5xl font-black text-green-300">30% OFF</div>
-              <div className="text-lg font-bold mt-2">Large Pizza</div>
-            </div>
-          </div>
+          />
           
-          {/* A&W Restaurant */}
+          {/* Colorful Tacos - Bottom Center */}
           <div 
-            className="absolute bottom-16 right-20 w-60 h-42 rounded-xl shadow-2xl transform rotate-18 overflow-hidden border-2 border-amber-400"
+            className="absolute bottom-0 left-1/4 w-80 h-56 rounded-2xl transform rotate-8 overflow-hidden opacity-80"
             style={{
-              backgroundImage: `linear-gradient(135deg, #ea580c 0%, #f59e0b 100%)`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
+              backgroundImage: `url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 240"><defs><linearGradient id="taco" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="%23FCD34D"/><stop offset="100%" stop-color="%23D97706"/></linearGradient></defs><path d="M70 180 Q170 100 270 180 Q170 200 70 180" fill="url(%23taco)"/><rect x="90" y="130" width="180" height="18" fill="%23DC2626"/><rect x="100" y="150" width="160" height="12" fill="%23059669"/><circle cx="140" cy="140" r="10" fill="%23FBBF24"/><circle cx="200" cy="145" r="8" fill="%23FBBF24"/><path d="M120 190 Q170 110 220 190 Q170 210 120 190" fill="url(%23taco)" opacity="0.7"/></svg>')`,
+              backgroundSize: 'cover'
             }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-600/80 to-amber-500/80"></div>
-            <div className="relative p-6 text-white h-full flex flex-col justify-center">
-              <div className="text-2xl font-black mb-4 text-amber-200">A&W</div>
-              <div className="text-3xl font-black text-amber-300">BUY 1 GET 1</div>
-              <div className="text-lg font-bold mt-2">Teen Burger</div>
-            </div>
-          </div>
+          />
+          
+          {/* Additional Food Elements for Full Coverage */}
+          <div 
+            className="absolute top-1/4 left-1/3 w-60 h-60 rounded-full transform rotate-45 overflow-hidden opacity-50"
+            style={{
+              backgroundImage: `url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250"><defs><radialGradient id="pizza3" cx="50%" cy="50%"><stop offset="0%" stop-color="%23FEF3C7"/><stop offset="50%" stop-color="%23F59E0B"/><stop offset="100%" stop-color="%23B45309"/></radialGradient></defs><circle cx="125" cy="125" r="120" fill="url(%23pizza3)"/><circle cx="90" cy="90" r="12" fill="%23DC2626"/><circle cx="160" cy="110" r="14" fill="%23059669"/><circle cx="125" cy="150" r="16" fill="%23DC2626"/></svg>')`,
+              backgroundSize: 'cover'
+            }}
+          />
+          
+          {/* Dark Overlay for Text Readability */}
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
         
         {/* Geometric Patterns */}
