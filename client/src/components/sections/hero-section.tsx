@@ -143,14 +143,6 @@ export default function HeroSection() {
               backgroundPosition: 'center'
             }}
           />
-          <div 
-            className="absolute top-1/2 right-12 w-52 h-68 rounded-2xl overflow-hidden shadow-2xl transform -rotate-4"
-            style={{
-              backgroundImage: `url(${friesImage})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}
-          />
           
           {/* Bottom Row - Tacos */}
           <div 
@@ -162,27 +154,11 @@ export default function HeroSection() {
             }}
           />
           
-          {/* Small Accent Food Items - Well Spaced */}
-          <div 
-            className="absolute top-32 left-1/2 w-40 h-40 rounded-full overflow-hidden shadow-lg transform -rotate-12"
-            style={{
-              backgroundImage: `url(${pizzaImage})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}
-          />
+          {/* Small Accent Food Items - Well Spaced */
           <div 
             className="absolute bottom-32 right-32 w-44 h-32 rounded-2xl overflow-hidden shadow-lg transform rotate-12"
             style={{
               backgroundImage: `url(${burgerImage})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}
-          />
-          <div 
-            className="absolute bottom-20 left-20 w-36 h-36 rounded-full overflow-hidden shadow-lg transform -rotate-18"
-            style={{
-              backgroundImage: `url(${friesImage})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center'
             }}
@@ -196,7 +172,7 @@ export default function HeroSection() {
         <div className="relative z-10 text-center px-6 sm:px-8 lg:px-12 max-w-6xl mx-auto">
           {/* Modern Sleek Headline */}
           <h1 className="text-5xl sm:text-6xl lg:text-8xl font-bold mb-12 leading-tight tracking-tight">
-            <span className="bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">
+            <span className="bg-white px-8 py-4 rounded-2xl shadow-xl text-gray-900 inline-block">
               FlyQupon
             </span>
           </h1>
