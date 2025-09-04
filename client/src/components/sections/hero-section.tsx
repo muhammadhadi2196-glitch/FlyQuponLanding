@@ -1,11 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import BeeLogo from "@/components/bee-logo";
-import pizzaImage from "@assets/generated_images/Gourmet_pizza_professional_photography_50c093cf.png";
-import burgerImage from "@assets/generated_images/Juicy_burger_professional_photography_90a9eacd.png";
-import shawarmaImage from "@assets/generated_images/Shawarma_wrap_professional_photography_467892fe.png";
-import friesImage from "@assets/generated_images/Crispy_french_fries_photography_a75b7100.png";
-import tacosImage from "@assets/generated_images/Mexican_tacos_professional_photography_966d3c21.png";
+import couponBackground from "@assets/generated_images/Fast_food_coupon_collage_background_3dab3dc1.png";
 import { Menu, X } from "lucide-react";
 
 export default function HeroSection() {
@@ -114,57 +110,18 @@ export default function HeroSection() {
       {/* Hero Section - Sleek Professional Design */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 to-white">
         
-        {/* Professional Food Catalog Background - Non-Overlapping */}
-        <div className="absolute inset-0">
-          {/* Top Row - Pizza & Burger */}
-          <div 
-            className="absolute top-16 left-16 w-64 h-48 rounded-2xl overflow-hidden shadow-2xl transform rotate-3"
-            style={{
-              backgroundImage: `url(${pizzaImage})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}
-          />
-          <div 
-            className="absolute top-20 right-20 w-60 h-44 rounded-2xl overflow-hidden shadow-2xl transform -rotate-6"
-            style={{
-              backgroundImage: `url(${burgerImage})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}
-          />
-          
-          {/* Middle Row - Shawarma & Fries */}
-          <div 
-            className="absolute top-1/2 left-8 w-56 h-40 rounded-2xl overflow-hidden shadow-2xl transform rotate-8"
-            style={{
-              backgroundImage: `url(${shawarmaImage})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}
-          />
-          <div 
-            className="absolute top-1/2 right-8 w-52 h-36 rounded-2xl overflow-hidden shadow-2xl transform -rotate-5"
-            style={{
-              backgroundImage: `url(${friesImage})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}
-          />
-          
-          {/* Bottom Row - Tacos */}
-          <div 
-            className="absolute bottom-24 left-1/3 w-64 h-44 rounded-2xl overflow-hidden shadow-2xl transform rotate-5"
-            style={{
-              backgroundImage: `url(${tacosImage})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}
-          />
-          
-          
+        {/* Coupon Collage Background */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url(${couponBackground})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        >
           {/* Subtle Overlay for Professional Look */}
-          <div className="absolute inset-0 bg-white/20"></div>
+          <div className="absolute inset-0 bg-white/10"></div>
         </div>
         
         {/* Sleek Hero Content */}
