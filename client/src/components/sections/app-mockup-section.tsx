@@ -3,6 +3,7 @@ import BeeLogo from "@/components/bee-logo";
 import mcdonaldsLogo from "@assets/dnaks logo_1756874415179.png";
 import timHortonsLogo from "@assets/Tim-Hortons-logo_1756874415180.png";
 import popeyesLogo from "@assets/pops logo_1756874415180.png";
+import burgerImage from "@assets/generated_images/McDonald's_Big_Mac_burger_photo_387f8f12.png";
 
 const features = [
   "Real-time coupon updates",
@@ -18,7 +19,7 @@ export default function AppMockupSection() {
           {/* App Mockup */}
           <div className="relative" data-testid="app-mockup">
             {/* Phone mockup container */}
-            <div className="relative mx-auto w-80 h-[600px] bg-gray-900 rounded-[3rem] p-2 animate-float">
+            <div className="relative mx-auto w-80 h-[650px] bg-gray-900 rounded-[3rem] p-2 animate-float shadow-2xl">
               <div className="w-full h-full bg-background rounded-[2.5rem] overflow-hidden border border-border">
                 {/* App Screen Content */}
                 <div className="relative h-full bg-gray-50">
@@ -33,29 +34,29 @@ export default function AppMockupSection() {
                   </div>
                   
                   {/* Search Bar */}
-                  <div className="bg-white p-4">
+                  <div className="bg-white px-4 pt-4 pb-3">
                     <div className="relative">
-                      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                       <input 
                         type="text" 
                         placeholder="Search restaurants, items, or brands"
-                        className="w-full pl-10 pr-4 py-3 bg-gray-100 rounded-lg text-sm text-gray-600"
+                        className="w-full pl-10 pr-4 py-3.5 bg-gray-100 rounded-xl text-sm text-gray-500 font-medium"
                         disabled
                       />
                     </div>
                   </div>
                   
                   {/* Navigation Tabs */}
-                  <div className="bg-white px-4 pb-4">
-                    <div className="flex space-x-2">
-                      <div className="bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-medium flex items-center">
-                        <span className="mr-1">📍</span> Nearby
+                  <div className="bg-white px-4 pb-5">
+                    <div className="flex space-x-3">
+                      <div className="bg-orange-500 text-white px-5 py-2.5 rounded-full text-sm font-semibold flex items-center shadow-sm">
+                        <span className="mr-2">📍</span> Nearby
                       </div>
-                      <div className="bg-gray-100 text-gray-600 px-4 py-2 rounded-full text-sm font-medium flex items-center">
-                        <span className="mr-1">🔥</span> Trending
+                      <div className="bg-gray-100 text-gray-600 px-5 py-2.5 rounded-full text-sm font-semibold flex items-center">
+                        <span className="mr-2">🔥</span> Trending
                       </div>
-                      <div className="bg-gray-100 text-gray-600 px-4 py-2 rounded-full text-sm font-medium flex items-center">
-                        <span className="mr-1">⏰</span> Expiring Soon
+                      <div className="bg-gray-100 text-gray-500 px-4 py-2.5 rounded-full text-sm font-semibold flex items-center">
+                        <span className="mr-2">⏰</span> Expiring Soon
                       </div>
                     </div>
                   </div>
@@ -68,23 +69,25 @@ export default function AppMockupSection() {
                       </h3>
                       
                       {/* McDonald's Deal */}
-                      <div className="bg-white rounded-lg p-4 mb-4 shadow-sm border border-gray-200">
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center space-x-3">
-                            <div className="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center">
-                              <img src={mcdonaldsLogo} alt="McDonald's" className="w-8 h-6 object-contain" />
-                            </div>
-                            <div>
-                              <h4 className="font-bold text-gray-900 text-sm">McDonald's - 17th Ave</h4>
-                              <p className="text-gray-600 text-xs">Buy 1 Get 1 Free Burgers</p>
-                              <p className="text-gray-400 text-xs">1235 17 Ave SW, Calgary, AB</p>
-                              <p className="text-gray-400 text-xs">Expires: Dec 30</p>
-                            </div>
+                      <div className="bg-white rounded-xl p-4 mb-4 shadow-sm border border-gray-100">
+                        <div className="flex items-start space-x-3">
+                          <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                            <img 
+                              src={burgerImage} 
+                              alt="Big Mac" 
+                              className="w-full h-full object-cover"
+                            />
                           </div>
-                          <div className="flex flex-col items-end">
-                            <div className="bg-orange-500 text-white px-2 py-1 rounded text-xs font-bold mb-2">50% OFF</div>
-                            <Heart className="w-5 h-5 text-gray-300" />
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-start justify-between mb-1">
+                              <h4 className="font-bold text-gray-900 text-sm leading-tight">McDonald's - 17th Ave</h4>
+                              <div className="bg-orange-500 text-white px-2 py-1 rounded-full text-xs font-bold ml-2">50% OFF</div>
+                            </div>
+                            <p className="text-gray-700 text-sm font-medium mb-1">Buy 1 Get 1 Free Burgers</p>
+                            <p className="text-gray-500 text-xs mb-1">1235 17 Ave SW, Calgary, AB</p>
+                            <p className="text-gray-500 text-xs">Expires: Dec 30</p>
                           </div>
+                          <Heart className="w-6 h-6 text-gray-300 flex-shrink-0 mt-1" />
                         </div>
                       </div>
                     </div>
@@ -93,32 +96,34 @@ export default function AppMockupSection() {
                     <div className="px-4 py-4">
                       <h3 className="text-lg font-bold text-gray-900 mb-4">Browse by Category</h3>
                       
-                      <div className="grid grid-cols-2 gap-4 mb-4">
-                        <div className="bg-white rounded-lg p-4 border border-gray-200 text-center">
-                          <div className="text-2xl mb-2">🍔</div>
-                          <div className="font-semibold text-gray-900 text-sm">Fast Food</div>
+                      <div className="grid grid-cols-2 gap-4 mb-5">
+                        <div className="bg-white rounded-xl p-5 border border-gray-100 text-center shadow-sm">
+                          <div className="text-3xl mb-3">🍔</div>
+                          <div className="font-bold text-gray-900 text-sm mb-1">Fast Food</div>
                           <div className="text-gray-500 text-xs">5 deals</div>
                         </div>
-                        <div className="bg-white rounded-lg p-4 border border-gray-200 text-center">
-                          <div className="text-2xl mb-2">☕</div>
-                          <div className="font-semibold text-gray-900 text-sm">Coffee & Café</div>
+                        <div className="bg-white rounded-xl p-5 border border-gray-100 text-center shadow-sm">
+                          <div className="text-3xl mb-3">☕</div>
+                          <div className="font-bold text-gray-900 text-sm mb-1">Coffee & Café</div>
                           <div className="text-gray-500 text-xs">2 deals</div>
                         </div>
-                        <div className="bg-white rounded-lg p-4 border border-gray-200 text-center">
-                          <div className="text-2xl mb-2">🍽️</div>
-                          <div className="font-semibold text-gray-900 text-sm">Fine Dining</div>
+                        <div className="bg-white rounded-xl p-5 border border-gray-100 text-center shadow-sm">
+                          <div className="text-3xl mb-3">🍽️</div>
+                          <div className="font-bold text-gray-900 text-sm mb-1">Fine Dining</div>
                           <div className="text-gray-500 text-xs">0 deals</div>
                         </div>
-                        <div className="bg-white rounded-lg p-4 border border-gray-200 text-center">
-                          <div className="text-2xl mb-2">🍰</div>
-                          <div className="font-semibold text-gray-900 text-sm">Desserts</div>
+                        <div className="bg-white rounded-xl p-5 border border-gray-100 text-center shadow-sm">
+                          <div className="text-3xl mb-3">🍰</div>
+                          <div className="font-bold text-gray-900 text-sm mb-1">Desserts</div>
                           <div className="text-gray-500 text-xs">1 deals</div>
                         </div>
                       </div>
                       
                       <div className="flex items-center justify-between mb-4">
                         <h3 className="text-lg font-bold text-gray-900">All Deals</h3>
-                        <button className="text-blue-500 text-sm font-medium">Sort</button>
+                        <button className="text-blue-500 text-sm font-semibold flex items-center">
+                          <span className="mr-1">—</span> Sort
+                        </button>
                       </div>
                     </div>
                   </div>
