@@ -135,7 +135,7 @@ export default function HeroSection() {
           
           {/* Clean Modern Subtitle */}
           <div className="mb-8">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-gray-800 mb-6 leading-relaxed">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-gray-800 mb-6 leading-relaxed bg-white/90 backdrop-blur-sm rounded-xl px-6 py-4 shadow-lg inline-block">
               Instant Access to Restaurant Deals
             </h2>
           </div>
