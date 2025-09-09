@@ -142,13 +142,14 @@ export default function HeroSection() {
           </div>
           
           {/* Email Input */}
-          <div className="mb-16 max-w-md mx-auto">
-            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg">
+          <div className="mb-16 max-w-lg mx-auto">
+            <div className="relative">
               <input 
                 type="email" 
                 placeholder="Enter your email address"
-                className="w-full px-6 py-4 rounded-xl border border-gray-300 text-gray-800 text-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                className="w-full px-8 py-5 rounded-full bg-white/95 backdrop-blur-sm border-2 border-white/50 text-gray-800 text-lg placeholder-gray-500 shadow-2xl focus:outline-none focus:ring-4 focus:ring-green-500/30 focus:border-green-400 focus:bg-white transition-all duration-300 hover:shadow-xl hover:bg-white"
               />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-green-400/10 to-blue-400/10 pointer-events-none"></div>
             </div>
           </div>
           
