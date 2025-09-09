@@ -133,19 +133,23 @@ export default function HeroSection() {
             </span>
           </h1>
           
-          {/* Clean Modern Subtitle */}
+          {/* Main Description */}
           <div className="mb-8">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-gray-800 mb-6 leading-relaxed bg-white/90 backdrop-blur-sm rounded-xl px-6 py-4 shadow-lg inline-block">
-              Instant Access to Restaurant Deals
-            </h2>
-          </div>
-          
-          {/* Updated Messaging */}
-          <div className="mb-16 max-w-4xl mx-auto">
             <p className="text-lg sm:text-xl lg:text-2xl leading-relaxed font-medium bg-white/90 backdrop-blur-sm rounded-2xl px-8 py-6 shadow-lg text-gray-700">
               <span className="text-green-600 font-semibold">No paper, no need to wait for flyers to come in and no forgetting coupons.</span><br className="mb-2"/>
               We have it all in one app ready for whenever you need it.
             </p>
+          </div>
+          
+          {/* Email Input */}
+          <div className="mb-16 max-w-md mx-auto">
+            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg">
+              <input 
+                type="email" 
+                placeholder="Enter your email address"
+                className="w-full px-6 py-4 rounded-xl border border-gray-300 text-gray-800 text-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              />
+            </div>
           </div>
           
           {/* Modern CTA Buttons */}
