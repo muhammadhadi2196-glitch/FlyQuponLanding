@@ -146,7 +146,7 @@ export default function HeroSection() {
             <div className="relative">
               <input 
                 type="email" 
-                placeholder="Enter your email address"
+                placeholder="Enter your email address to be a part of the waitlist! 🚀"
                 className="w-full px-8 py-5 rounded-full bg-white/95 backdrop-blur-sm border-2 border-white/50 text-gray-800 text-lg placeholder-gray-500 shadow-2xl focus:outline-none focus:ring-4 focus:ring-green-500/30 focus:border-green-400 focus:bg-white transition-all duration-300 hover:shadow-xl hover:bg-white"
               />
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-green-400/10 to-blue-400/10 pointer-events-none"></div>
