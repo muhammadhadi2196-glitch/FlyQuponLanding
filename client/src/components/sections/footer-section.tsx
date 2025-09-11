@@ -28,7 +28,7 @@ export default function FooterSection() {
             </div>
             <p className="text-lg font-medium text-accent mb-4">Coupon on the Go.</p>
             <p className="text-primary-foreground/70 leading-relaxed max-w-md">
-              The smartest way to discover, save, and redeem coupons from your favorite restaurants and stores.
+              The smartest way to discover, save, and redeem coupons from your favorite restaurants and stores, no more waiting for mail coupons to arrive, and no more losing them.
             </p>
           </div>
           
