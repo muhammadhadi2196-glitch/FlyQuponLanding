@@ -2,14 +2,15 @@ import logoImage from "@assets/new fly_1756873727296.png";
 
 interface BeeLogoProps {
   className?: string;
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "lg" | "xl";
 }
 
 export default function BeeLogo({ className = "", size = "md" }: BeeLogoProps) {
   const sizeClasses = {
     sm: "w-12 h-12",
     md: "w-16 h-16", 
-    lg: "w-24 h-24"
+    lg: "w-24 h-24",
+    xl: "w-32 h-32"
   };
 
   return (
