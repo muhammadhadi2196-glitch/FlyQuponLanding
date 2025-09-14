@@ -60,6 +60,42 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Export waitlist emails as CSV (Admin only)
+  app.get("/api/waitlist/export", async (req, res) => {
+    try {
+      // Check for admin authorization
+      const authHeader = req.headers.authorization;
+      const expectedToken = process.env.ADMIN_TOKEN || "flyqupon-admin-2024";
+      
+      if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        return res.status(401).json({ message: "Unauthorized: Bearer token required" });
+      }
+      
+      const token = authHeader.substring(7);
+      if (token !== expectedToken) {
+        return res.status(401).json({ message: "Unauthorized: Invalid token" });
+      }
+      
+      const emails = await storage.getAllWaitlistEmails();
+      
+      // Create CSV content
+      const csvHeader = "Email,Date Added\n";
+      const csvRows = emails.map(email => 
+        `${email.email},${email.createdAt.toISOString()}`
+      ).join('\n');
+      
+      const csvContent = csvHeader + csvRows;
+      
+      // Set headers for CSV download
+      res.setHeader('Content-Type', 'text/csv');
+      res.setHeader('Content-Disposition', 'attachment; filename="flyqupon-waitlist.csv"');
+      res.send(csvContent);
+    } catch (error) {
+      console.error("Failed to export waitlist:", error);
+      res.status(500).json({ message: "Failed to export waitlist" });
+    }
+  });
+
   const httpServer = createServer(app);
   return httpServer;
 }

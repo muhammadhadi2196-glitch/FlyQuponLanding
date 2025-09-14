@@ -12,9 +12,11 @@ class GoogleSheetsService {
   async initialize() {
     try {
       // Create JWT auth using service account credentials
+      const privateKey = process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n');
+      
       this.auth = new google.auth.JWT({
         email: process.env.GOOGLE_CLIENT_EMAIL,
-        key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
+        key: privateKey,
         scopes: ['https://www.googleapis.com/auth/spreadsheets']
       });
 
