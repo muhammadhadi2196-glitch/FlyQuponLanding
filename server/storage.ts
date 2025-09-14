@@ -1,4 +1,6 @@
-import { type User, type InsertUser, type WaitlistEmail, type InsertWaitlistEmail } from "@shared/schema";
+import { users, waitlistEmails, type User, type InsertUser, type WaitlistEmail, type InsertWaitlistEmail } from "@shared/schema";
+import { db } from "./db";
+import { eq } from "drizzle-orm";
 import { randomUUID } from "crypto";
 
 export interface IStorage {
@@ -10,50 +12,41 @@ export interface IStorage {
   getAllWaitlistEmails(): Promise<WaitlistEmail[]>;
 }
 
-export class MemStorage implements IStorage {
-  private users: Map<string, User>;
-  private waitlistEmails: Map<string, WaitlistEmail>;
-
-  constructor() {
-    this.users = new Map();
-    this.waitlistEmails = new Map();
-  }
-
+export class DatabaseStorage implements IStorage {
   async getUser(id: string): Promise<User | undefined> {
-    return this.users.get(id);
+    const [user] = await db.select().from(users).where(eq(users.id, id));
+    return user || undefined;
   }
 
   async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
+    const [user] = await db.select().from(users).where(eq(users.username, username));
+    return user || undefined;
   }
 
   async createUser(insertUser: InsertUser): Promise<User> {
-    const id = randomUUID();
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
+    const [user] = await db
+      .insert(users)
+      .values(insertUser)
+      .returning();
     return user;
   }
 
   async addWaitlistEmail(data: InsertWaitlistEmail): Promise<WaitlistEmail> {
-    const id = randomUUID();
-    const waitlistEmail: WaitlistEmail = {
-      ...data,
-      id,
-      createdAt: new Date(),
-    };
-    this.waitlistEmails.set(data.email, waitlistEmail);
+    const [waitlistEmail] = await db
+      .insert(waitlistEmails)
+      .values(data)
+      .returning();
     return waitlistEmail;
   }
 
   async getWaitlistEmail(email: string): Promise<WaitlistEmail | undefined> {
-    return this.waitlistEmails.get(email);
+    const [waitlistEmail] = await db.select().from(waitlistEmails).where(eq(waitlistEmails.email, email));
+    return waitlistEmail || undefined;
   }
 
   async getAllWaitlistEmails(): Promise<WaitlistEmail[]> {
-    return Array.from(this.waitlistEmails.values());
+    return await db.select().from(waitlistEmails);
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();
