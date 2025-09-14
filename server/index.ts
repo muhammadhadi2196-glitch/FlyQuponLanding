@@ -47,6 +47,11 @@ app.use((req, res, next) => {
     throw err;
   });
 
+  // Add API 404 handler before Vite catch-all
+  app.all('/api/*', (_req, res) => {
+    res.status(404).json({ message: 'API endpoint not found' });
+  });
+
   // importantly only setup vite in development and after
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes

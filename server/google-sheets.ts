@@ -64,36 +64,74 @@ class GoogleSheetsService {
       
       console.log('Google Sheets authentication successful');
       
-      // Initialize headers if sheet is empty
-      await this.initializeHeaders();
+      // Validate sheet exists and initialize headers
+      await this.validateAndInitializeSheet();
     } catch (error) {
       console.error('Failed to initialize Google Sheets:', error);
+      if (error.response?.data) {
+        console.error('Google API error details:', JSON.stringify(error.response.data, null, 2));
+      }
       console.error('Error details:', error instanceof Error ? error.message : 'Unknown error');
+      throw error;
+    }
+  }
+
+  private async validateAndInitializeSheet() {
+    try {
+      // First, get the spreadsheet metadata to check available sheets
+      const spreadsheet = await this.sheets.spreadsheets.get({
+        spreadsheetId: SPREADSHEET_ID,
+      });
+      
+      const availableSheets = spreadsheet.data.sheets?.map(sheet => sheet.properties?.title) || [];
+      console.log('Available sheet tabs:', availableSheets);
+      
+      if (!availableSheets.includes(SHEET_NAME)) {
+        throw new Error(`Sheet tab '${SHEET_NAME}' not found. Available tabs: ${availableSheets.join(', ')}. Please create a tab named '${SHEET_NAME}' or update the SHEET_NAME configuration.`);
+      }
+      
+      // Now initialize headers with proper quoting
+      await this.initializeHeaders();
+    } catch (error) {
+      console.error('Failed to validate sheet:', error);
+      if (error.response?.data) {
+        console.error('Google API error details:', JSON.stringify(error.response.data, null, 2));
+      }
       throw error;
     }
   }
 
   private async initializeHeaders() {
     try {
+      const quotedSheetName = "'" + SHEET_NAME.replace(/'/g, "''") + "'";
+      const range = `${quotedSheetName}!A1:C1`;
+      
       // Check if headers exist
       const response = await this.sheets.spreadsheets.values.get({
         spreadsheetId: SPREADSHEET_ID,
-        range: `${SHEET_NAME}!A1:C1`,
+        range: range,
       });
 
       // If no headers, add them
       if (!response.data.values || response.data.values.length === 0) {
         await this.sheets.spreadsheets.values.update({
           spreadsheetId: SPREADSHEET_ID,
-          range: `${SHEET_NAME}!A1:C1`,
+          range: range,
           valueInputOption: 'RAW',
           resource: {
             values: [['Email', 'Date Added', 'Source']]
           }
         });
+        console.log('Added headers to Google Sheet');
+      } else {
+        console.log('Headers already exist in Google Sheet');
       }
     } catch (error) {
       console.error('Failed to initialize headers:', error);
+      if (error.response?.data) {
+        console.error('Google API error details:', JSON.stringify(error.response.data, null, 2));
+      }
+      throw error;
     }
   }
 
@@ -109,11 +147,12 @@ class GoogleSheetsService {
         return false; // Email already exists
       }
 
-      // Add email to sheet
+      // Add email to sheet with proper quoting
+      const quotedSheetName = "'" + SHEET_NAME.replace(/'/g, "''") + "'";
       const timestamp = new Date().toISOString();
       await this.sheets.spreadsheets.values.append({
         spreadsheetId: SPREADSHEET_ID,
-        range: `${SHEET_NAME}!A:C`,
+        range: `${quotedSheetName}!A:C`,
         valueInputOption: 'RAW',
         insertDataOption: 'INSERT_ROWS',
         resource: {
@@ -124,6 +163,9 @@ class GoogleSheetsService {
       return true;
     } catch (error) {
       console.error('Failed to add email to Google Sheets:', error);
+      if (error.response?.data) {
+        console.error('Google API error details:', JSON.stringify(error.response.data, null, 2));
+      }
       throw error;
     }
   }
@@ -134,9 +176,10 @@ class GoogleSheetsService {
         await this.initialize();
       }
 
+      const quotedSheetName = "'" + SHEET_NAME.replace(/'/g, "''") + "'";
       const response = await this.sheets.spreadsheets.values.get({
         spreadsheetId: SPREADSHEET_ID,
-        range: `${SHEET_NAME}!A:A`,
+        range: `${quotedSheetName}!A:A`,
       });
 
       if (!response.data.values) {
@@ -150,6 +193,9 @@ class GoogleSheetsService {
         .filter(Boolean);
     } catch (error) {
       console.error('Failed to get emails from Google Sheets:', error);
+      if (error.response?.data) {
+        console.error('Google API error details:', JSON.stringify(error.response.data, null, 2));
+      }
       return [];
     }
   }
