@@ -22,9 +22,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Add to database
       const waitlistEmail = await storage.addWaitlistEmail(validatedData);
       
-      // Google Sheets integration temporarily disabled due to authentication issue
-      // Emails are safely stored in database and can be exported as CSV
-      console.log(`Email ${validatedData.email} saved to database (Google Sheets sync disabled)`)
+      // Sync with Google Sheets
+      try {
+        await googleSheetsService.addEmail(validatedData.email);
+        console.log(`Email ${validatedData.email} saved to database and synced to Google Sheets`);
+      } catch (sheetsError) {
+        console.error("Failed to sync with Google Sheets:", sheetsError);
+        console.log(`Email ${validatedData.email} saved to database (Google Sheets sync failed)`);
+      }
       
       res.status(201).json({ 
         message: "Successfully added to waitlist! 🚀",
@@ -52,6 +57,48 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error("Failed to get waitlist stats:", error);
       res.status(500).json({ message: "Failed to get waitlist stats" });
+    }
+  });
+
+  // Sync existing database emails to Google Sheets (Admin only)
+  app.post("/api/waitlist/sync-sheets", async (req, res) => {
+    try {
+      // Check for admin authorization
+      const authHeader = req.headers.authorization;
+      const expectedToken = process.env.ADMIN_TOKEN || "flyqupon-admin-2024";
+      
+      if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        return res.status(401).json({ message: "Unauthorized: Bearer token required" });
+      }
+      
+      const token = authHeader.substring(7);
+      if (token !== expectedToken) {
+        return res.status(401).json({ message: "Unauthorized: Invalid token" });
+      }
+      
+      const emails = await storage.getAllWaitlistEmails();
+      let syncedCount = 0;
+      let failedCount = 0;
+      
+      for (const emailData of emails) {
+        try {
+          await googleSheetsService.addEmail(emailData.email);
+          syncedCount++;
+        } catch (error) {
+          console.error(`Failed to sync email ${emailData.email}:`, error);
+          failedCount++;
+        }
+      }
+      
+      res.json({ 
+        message: `Sync completed: ${syncedCount} emails synced, ${failedCount} failed`,
+        synced: syncedCount,
+        failed: failedCount,
+        total: emails.length
+      });
+    } catch (error) {
+      console.error("Failed to sync emails to Google Sheets:", error);
+      res.status(500).json({ message: "Failed to sync emails to Google Sheets" });
     }
   });
 
