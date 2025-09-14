@@ -22,14 +22,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Add to database
       const waitlistEmail = await storage.addWaitlistEmail(validatedData);
       
-      // Try to add to Google Sheets (non-blocking)
-      try {
-        await googleSheetsService.addEmail(validatedData.email);
-        console.log(`Successfully added ${validatedData.email} to Google Sheets`);
-      } catch (sheetsError) {
-        console.error("Failed to add email to Google Sheets:", sheetsError);
-        // Continue anyway - we have it in the database
-      }
+      // Google Sheets integration temporarily disabled due to authentication issue
+      // Emails are safely stored in database and can be exported as CSV
+      console.log(`Email ${validatedData.email} saved to database (Google Sheets sync disabled)`)
       
       res.status(201).json({ 
         message: "Successfully added to waitlist! 🚀",
