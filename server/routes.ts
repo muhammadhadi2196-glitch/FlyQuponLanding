@@ -2,6 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertWaitlistEmailSchema } from "@shared/schema";
+import { googleSheetsService } from "./google-sheets";
 import { z } from "zod";
 
 export async function registerRoutes(app: Express): Promise<Server> {
@@ -10,7 +11,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const validatedData = insertWaitlistEmailSchema.parse(req.body);
       
-      // Check if email already exists
+      // Check if email already exists in database
       const existingEmail = await storage.getWaitlistEmail(validatedData.email);
       if (existingEmail) {
         return res.status(400).json({ 
@@ -18,22 +19,32 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
       }
 
+      // Add to database
       const waitlistEmail = await storage.addWaitlistEmail(validatedData);
       
+      // Try to add to Google Sheets (non-blocking)
+      try {
+        await googleSheetsService.addEmail(validatedData.email);
+        console.log(`Successfully added ${validatedData.email} to Google Sheets`);
+      } catch (sheetsError) {
+        console.error("Failed to add email to Google Sheets:", sheetsError);
+        // Continue anyway - we have it in the database
+      }
+      
       res.status(201).json({ 
-        message: "Successfully added to waitlist",
+        message: "Successfully added to waitlist! 🚀",
         email: waitlistEmail.email 
       });
     } catch (error) {
       if (error instanceof z.ZodError) {
         return res.status(400).json({ 
-          message: error.errors[0]?.message || "Invalid email format" 
+          message: error.errors[0]?.message || "Please enter a valid email address" 
         });
       }
       
       console.error("Waitlist signup error:", error);
       res.status(500).json({ 
-        message: "Failed to add email to waitlist" 
+        message: "Failed to add email to waitlist. Please try again." 
       });
     }
   });

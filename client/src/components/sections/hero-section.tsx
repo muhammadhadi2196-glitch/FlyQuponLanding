@@ -2,10 +2,15 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import BeeLogo from "@/components/bee-logo";
 import couponBackground from "@assets/generated_images/Fast_food_coupon_collage_background_3dab3dc1.png";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Loader2 } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { apiRequest } from "@/lib/queryClient";
 
 export default function HeroSection() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -17,6 +22,40 @@ export default function HeroSection() {
 
   const scrollToWaitlist = () => scrollToSection("waitlist");
   const scrollToHowItWorks = () => scrollToSection("how-it-works");
+
+  const handleEmailSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email.trim()) {
+      toast({
+        title: "Email required",
+        description: "Please enter your email address",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    
+    try {
+      const response = await apiRequest("POST", "/api/waitlist", { email: email.trim() });
+
+      toast({
+        title: "Welcome to the waitlist! 🚀",
+        description: "You'll be the first to know when FlyQupon launches!",
+      });
+      
+      setEmail(""); // Clear the form
+    } catch (error: any) {
+      toast({
+        title: "Oops!",
+        description: error.message || "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <>
@@ -141,17 +180,31 @@ export default function HeroSection() {
             </p>
           </div>
           
-          {/* Email Input */}
-          <div className="mb-16 max-w-lg mx-auto">
-            <div className="relative">
+          {/* Email Input Form */}
+          <form onSubmit={handleEmailSubmit} className="mb-16 max-w-lg mx-auto">
+            <div className="relative flex items-center">
               <input 
                 type="email" 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email to join the waitlist 🚀"
-                className="w-full px-8 py-5 rounded-full bg-white/95 backdrop-blur-sm border-2 border-white/50 text-gray-800 text-lg placeholder-gray-500 shadow-2xl focus:outline-none focus:ring-4 focus:ring-green-500/30 focus:border-green-400 focus:bg-white transition-all duration-300 hover:shadow-xl hover:bg-white"
+                className="w-full px-8 py-5 pr-24 rounded-full bg-white/95 backdrop-blur-sm border-2 border-white/50 text-gray-800 text-lg placeholder-gray-500 shadow-2xl focus:outline-none focus:ring-4 focus:ring-green-500/30 focus:border-green-400 focus:bg-white transition-all duration-300 hover:shadow-xl hover:bg-white"
+                disabled={isSubmitting}
               />
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="absolute right-2 bg-green-600 hover:bg-green-700 disabled:bg-green-400 text-white px-4 py-3 rounded-full font-semibold transition-all hover:shadow-lg disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? (
+                  <Loader2 className="w-5 h-5 animate-spin" />
+                ) : (
+                  "Join"
+                )}
+              </button>
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-green-400/10 to-blue-400/10 pointer-events-none"></div>
             </div>
-          </div>
+          </form>
           
           {/* Modern CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
