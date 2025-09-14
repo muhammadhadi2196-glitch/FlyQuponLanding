@@ -11,22 +11,48 @@ class GoogleSheetsService {
 
   async initialize() {
     try {
-      // Create JWT auth using service account credentials
-      const privateKey = process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n');
+      const clientEmail = process.env.GOOGLE_CLIENT_EMAIL;
+      let privateKey = process.env.GOOGLE_PRIVATE_KEY;
       
-      this.auth = new google.auth.JWT({
-        email: process.env.GOOGLE_CLIENT_EMAIL,
-        key: privateKey,
+      if (!clientEmail || !privateKey) {
+        throw new Error('Google service account credentials not found in environment variables');
+      }
+      
+      // Clean up the private key format
+      privateKey = privateKey
+        .replace(/\\n/g, '\n')
+        .replace(/\\\\/g, '\\')
+        .trim();
+      
+      console.log('Initializing Google Sheets with service account:', clientEmail);
+      
+      // Create service account JSON object
+      const serviceAccountKey = {
+        type: "service_account",
+        client_email: clientEmail,
+        private_key: privateKey,
+        private_key_id: "key-id", // This can be a placeholder
+        project_id: "flyqupon", // This can be a placeholder
+        auth_uri: "https://accounts.google.com/o/oauth2/auth",
+        token_uri: "https://oauth2.googleapis.com/token",
+      };
+      
+      // Use GoogleAuth.fromJSON instead of JWT
+      const auth = new google.auth.GoogleAuth({
+        credentials: serviceAccountKey,
         scopes: ['https://www.googleapis.com/auth/spreadsheets']
       });
-
-      await this.auth.authorize();
+      
+      this.auth = await auth.getClient() as JWT;
       this.sheets = google.sheets({ version: 'v4', auth: this.auth });
+      
+      console.log('Google Sheets authentication successful');
       
       // Initialize headers if sheet is empty
       await this.initializeHeaders();
     } catch (error) {
       console.error('Failed to initialize Google Sheets:', error);
+      console.error('Error details:', error instanceof Error ? error.message : 'Unknown error');
       throw error;
     }
   }
