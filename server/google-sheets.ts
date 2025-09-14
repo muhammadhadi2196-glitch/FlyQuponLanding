@@ -18,11 +18,24 @@ class GoogleSheetsService {
         throw new Error('Google service account credentials not found in environment variables');
       }
       
-      // Clean up the private key format
+      // Clean up the private key format - handle various encoding issues
       privateKey = privateKey
         .replace(/\\n/g, '\n')
         .replace(/\\\\/g, '\\')
+        .replace(/"/g, '')
         .trim();
+      
+      // Ensure proper PEM format
+      if (!privateKey.startsWith('-----BEGIN PRIVATE KEY-----')) {
+        privateKey = `-----BEGIN PRIVATE KEY-----\n${privateKey}\n-----END PRIVATE KEY-----`;
+      } else if (!privateKey.includes('\n')) {
+        // If it's all on one line, format it properly
+        const keyContent = privateKey
+          .replace('-----BEGIN PRIVATE KEY-----', '')
+          .replace('-----END PRIVATE KEY-----', '')
+          .trim();
+        privateKey = `-----BEGIN PRIVATE KEY-----\n${keyContent}\n-----END PRIVATE KEY-----`;
+      }
       
       console.log('Initializing Google Sheets with service account:', clientEmail);
       
@@ -37,13 +50,16 @@ class GoogleSheetsService {
         token_uri: "https://oauth2.googleapis.com/token",
       };
       
-      // Use GoogleAuth.fromJSON instead of JWT
-      const auth = new google.auth.GoogleAuth({
-        credentials: serviceAccountKey,
+      // Use JWT directly for more reliable authentication
+      this.auth = new google.auth.JWT({
+        email: serviceAccountKey.client_email,
+        key: serviceAccountKey.private_key,
         scopes: ['https://www.googleapis.com/auth/spreadsheets']
       });
       
-      this.auth = await auth.getClient() as JWT;
+      // Explicitly authorize the JWT
+      await this.auth.authorize();
+      
       this.sheets = google.sheets({ version: 'v4', auth: this.auth });
       
       console.log('Google Sheets authentication successful');
