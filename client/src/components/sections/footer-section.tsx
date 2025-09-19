@@ -1,4 +1,5 @@
 import BeeLogo from "@/components/bee-logo";
+import { SiInstagram, SiTiktok, SiX, SiFacebook } from "react-icons/si";
 
 const socialLinks = [
   { icon: "tiktok", href: "#", label: "TikTok" },
@@ -62,11 +63,11 @@ export default function FooterSection() {
                   aria-label={social.label}
                   data-testid={`social-${social.icon}`}
                 >
-                  <span className="text-sm">
-                    {social.icon === 'tiktok' && '🎵'}
-                    {social.icon === 'instagram' && '📷'}
-                    {social.icon === 'twitter' && '🐦'}
-                    {social.icon === 'facebook' && '👥'}
+                  <span className="text-lg">
+                    {social.icon === 'tiktok' && <SiTiktok />}
+                    {social.icon === 'instagram' && <SiInstagram />}
+                    {social.icon === 'twitter' && <SiX />}
+                    {social.icon === 'facebook' && <SiFacebook />}
                   </span>
                 </a>
               ))}
