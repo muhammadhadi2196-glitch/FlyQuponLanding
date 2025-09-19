@@ -59,6 +59,8 @@ export default function FooterSection() {
                 <a 
                   key={social.icon}
                   href={social.href} 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-all"
                   aria-label={social.label}
                   data-testid={`social-${social.icon}`}
