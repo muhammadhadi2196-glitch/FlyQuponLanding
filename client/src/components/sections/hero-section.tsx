@@ -166,15 +166,15 @@ export default function HeroSection() {
         {/* Sleek Hero Content */}
         <div className="relative z-10 text-center px-6 sm:px-8 lg:px-12 max-w-6xl mx-auto">
           {/* Modern Sleek Headline */}
-          <h1 className="text-5xl sm:text-6xl lg:text-8xl font-bold mb-12 leading-tight tracking-tight">
-            <span className="bg-white px-8 py-4 rounded-2xl shadow-xl text-gray-900 inline-block">
+          <h1 className="font-bold mb-8 sm:mb-12 leading-tight tracking-tight" style={{ fontSize: 'clamp(2rem, 8vw, 5rem)' }}>
+            <span className="bg-white px-4 sm:px-8 py-3 sm:py-4 rounded-2xl shadow-xl text-gray-900 inline-block">
               FlyQupon
             </span>
           </h1>
           
           {/* Main Description */}
           <div className="mb-8">
-            <p className="text-lg sm:text-xl lg:text-2xl leading-relaxed font-medium bg-white/90 backdrop-blur-sm rounded-2xl px-8 py-6 shadow-lg text-gray-700">
+            <p className="leading-relaxed font-medium bg-white/90 backdrop-blur-sm rounded-2xl px-4 sm:px-8 py-4 sm:py-6 shadow-lg text-gray-700" style={{ fontSize: 'clamp(1rem, 4vw, 1.5rem)' }}>
               <span className="text-green-600 font-semibold">No paper, no need to wait for flyers to come in and no forgetting coupons.</span><br className="mb-2"/>
               We have it all in one app ready for whenever you need it.
             </p>
@@ -182,19 +182,19 @@ export default function HeroSection() {
           
           {/* Email Input Form */}
           <form onSubmit={handleEmailSubmit} className="mb-16 max-w-lg mx-auto">
-            <div className="relative flex items-center">
+            <div className="flex flex-col gap-3 sm:flex-row sm:relative sm:items-center">
               <input 
                 type="email" 
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email to join the waitlist 🚀"
-                className="w-full px-8 py-5 pr-24 rounded-full bg-white/95 backdrop-blur-sm border-2 border-white/50 text-gray-800 text-lg placeholder-gray-500 shadow-2xl focus:outline-none focus:ring-4 focus:ring-green-500/30 focus:border-green-400 focus:bg-white transition-all duration-300 hover:shadow-xl hover:bg-white"
+                className="w-full px-6 sm:px-8 py-4 sm:py-5 sm:pr-24 rounded-full bg-white/95 backdrop-blur-sm border-2 border-white/50 text-gray-800 text-base sm:text-lg placeholder-gray-500 shadow-2xl focus:outline-none focus:ring-4 focus:ring-green-500/30 focus:border-green-400 focus:bg-white transition-all duration-300 hover:shadow-xl hover:bg-white"
                 disabled={isSubmitting}
               />
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="absolute right-2 bg-green-600 hover:bg-green-700 disabled:bg-green-400 text-white px-4 py-3 rounded-full font-semibold transition-all hover:shadow-lg disabled:cursor-not-allowed"
+                className="w-full sm:absolute sm:right-2 sm:w-auto bg-green-600 hover:bg-green-700 disabled:bg-green-400 text-white px-6 sm:px-4 py-4 sm:py-3 rounded-full font-semibold transition-all hover:shadow-lg disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <Loader2 className="w-5 h-5 animate-spin" />
@@ -202,7 +202,7 @@ export default function HeroSection() {
                   "Join"
                 )}
               </button>
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-green-400/10 to-blue-400/10 pointer-events-none"></div>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-green-400/10 to-blue-400/10 pointer-events-none hidden sm:block"></div>
             </div>
           </form>
           
