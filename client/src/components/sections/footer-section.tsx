@@ -2,7 +2,7 @@ import BeeLogo from "@/components/bee-logo";
 
 const socialLinks = [
   { icon: "tiktok", href: "#", label: "TikTok" },
-  { icon: "instagram", href: "#", label: "Instagram" }, 
+  { icon: "instagram", href: "https://www.instagram.com/flyqupons/", label: "Instagram" }, 
   { icon: "twitter", href: "#", label: "Twitter" },
   { icon: "facebook", href: "#", label: "Facebook" }
 ];
