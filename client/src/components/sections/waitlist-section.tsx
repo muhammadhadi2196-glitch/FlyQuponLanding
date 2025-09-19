@@ -66,7 +66,7 @@ export default function WaitlistSection() {
 
   if (isSubmitted) {
     return (
-      <section id="waitlist" className="py-20 bg-accent">
+      <section id="waitlist" className="py-20 bg-accent scroll-mt-20 sm:scroll-mt-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Card className="bg-primary text-primary-foreground border-0">
             <CardContent className="p-8">
@@ -92,7 +92,7 @@ export default function WaitlistSection() {
   }
 
   return (
-    <section id="waitlist" className="py-20 bg-accent">
+    <section id="waitlist" className="py-20 bg-accent scroll-mt-20 sm:scroll-mt-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-accent-foreground mb-6">
           Be the First to Try FlyQupon

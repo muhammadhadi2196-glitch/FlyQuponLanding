@@ -60,7 +60,7 @@ export default function HeroSection() {
   return (
     <>
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-border z-50">
+      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-border z-50" style={{ paddingTop: 'env(safe-area-inset-top)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
@@ -72,14 +72,14 @@ export default function HeroSection() {
             <div className="hidden md:flex items-center space-x-8">
               <button 
                 onClick={scrollToHowItWorks}
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-muted-foreground hover:text-primary transition-colors py-3 px-4 min-h-[44px]"
                 data-testid="nav-how-it-works"
               >
                 How It Works
               </button>
               <button 
                 onClick={() => scrollToSection("features")}
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-muted-foreground hover:text-primary transition-colors py-3 px-4 min-h-[44px]"
                 data-testid="nav-features"
               >
                 Features
@@ -96,8 +96,7 @@ export default function HeroSection() {
             {/* Mobile Menu Button */}
             <Button
               variant="ghost"
-              size="icon"
-              className="md:hidden"
+              className="md:hidden w-11 h-11"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               data-testid="button-mobile-menu"
             >
@@ -116,7 +115,7 @@ export default function HeroSection() {
                 <li>
                   <button 
                     onClick={scrollToHowItWorks}
-                    className="text-xl text-foreground font-medium w-full text-left"
+                    className="text-xl text-foreground font-medium w-full text-left py-3 min-h-[44px]"
                     data-testid="mobile-nav-how-it-works"
                   >
                     How It Works
@@ -125,7 +124,7 @@ export default function HeroSection() {
                 <li>
                   <button 
                     onClick={() => scrollToSection("features")}
-                    className="text-xl text-foreground font-medium w-full text-left"
+                    className="text-xl text-foreground font-medium w-full text-left py-3 min-h-[44px]"
                     data-testid="mobile-nav-features"
                   >
                     Features

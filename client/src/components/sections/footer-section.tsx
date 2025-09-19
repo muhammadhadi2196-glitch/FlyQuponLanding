@@ -61,7 +61,7 @@ export default function FooterSection() {
                   href={social.href} 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-all"
+                  className="w-11 h-11 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-all"
                   aria-label={social.label}
                   data-testid={`social-${social.icon}`}
                 >
