@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertWaitlistEmailSchema } from "@shared/schema";
 import { googleSheetsService } from "./google-sheets";
+import { getChatResponse } from "./chat";
 import { z } from "zod";
 
 export async function registerRoutes(app: Express): Promise<Server> {
@@ -135,6 +136,27 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error("Failed to export waitlist:", error);
       res.status(500).json({ message: "Failed to export waitlist" });
+    }
+  });
+
+  // Chat endpoint for AI assistant
+  app.post("/api/chat", async (req, res) => {
+    try {
+      const { message, history } = req.body;
+      
+      if (!message || typeof message !== 'string') {
+        return res.status(400).json({ message: "Message is required" });
+      }
+
+      const messageHistory = Array.isArray(history) ? history : [];
+      const response = await getChatResponse(message, messageHistory);
+      
+      res.json({ response });
+    } catch (error) {
+      console.error("Chat error:", error);
+      res.status(500).json({ 
+        message: "Sorry, I'm having trouble responding right now. Please try again." 
+      });
     }
   });
 
