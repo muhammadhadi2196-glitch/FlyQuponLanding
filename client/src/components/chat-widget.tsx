@@ -1,9 +1,10 @@
 import { useState, useRef, useEffect } from "react";
-import { MessageCircle, X, Send, Loader2 } from "lucide-react";
+import { X, Send, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { apiRequest } from "@/lib/queryClient";
+import beeIcon from "@assets/logo bee_1760503297478.png";
 
 interface Message {
   role: "user" | "assistant";
@@ -15,7 +16,7 @@ export default function ChatWidget() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "Hi! 👋 I'm here to help you learn about FlyQupon. Ask me anything about our digital coupon platform!"
+      content: "Hi! 👋 I'm FlyQ, your FlyQupon assistant. Ask me anything about our digital coupon platform!"
     }
   ]);
   const [input, setInput] = useState("");
@@ -77,13 +78,17 @@ export default function ChatWidget() {
     <>
       {/* Floating Chat Button */}
       {!isOpen && (
-        <Button
+        <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 h-14 w-14 rounded-full bg-primary hover:bg-primary/90 shadow-lg z-50 transition-transform hover:scale-110"
+          className="fixed bottom-6 right-6 h-16 w-16 rounded-full bg-white shadow-2xl z-50 transition-all duration-300 hover:scale-110 hover:shadow-[0_0_30px_rgba(234,179,8,0.5)] flex items-center justify-center p-2 border-2 border-primary/20"
           data-testid="chat-widget-button"
         >
-          <MessageCircle className="h-6 w-6 text-primary-foreground" />
-        </Button>
+          <img 
+            src={beeIcon} 
+            alt="FlyQ Assistant" 
+            className="w-full h-full object-contain"
+          />
+        </button>
       )}
 
       {/* Chat Window */}
@@ -91,9 +96,16 @@ export default function ChatWidget() {
         <div className="fixed bottom-6 right-6 w-[380px] max-w-[calc(100vw-3rem)] h-[500px] max-h-[calc(100vh-8rem)] bg-white rounded-2xl shadow-2xl z-50 flex flex-col border border-border">
           {/* Header */}
           <div className="bg-primary text-primary-foreground p-4 rounded-t-2xl flex justify-between items-center">
-            <div>
-              <h3 className="font-bold text-lg">FlyQupon Assistant</h3>
-              <p className="text-sm text-primary-foreground/80">Ask me anything!</p>
+            <div className="flex items-center gap-3">
+              <img 
+                src={beeIcon} 
+                alt="FlyQ" 
+                className="w-10 h-10 object-contain"
+              />
+              <div>
+                <h3 className="font-bold text-lg">FlyQ</h3>
+                <p className="text-sm text-primary-foreground/80">Ask me anything!</p>
+              </div>
             </div>
             <Button
               variant="ghost"
