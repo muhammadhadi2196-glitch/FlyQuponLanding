@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { apiRequest } from "@/lib/queryClient";
 import beeIcon from "@assets/logo bee_1760503297478.png";
-import bubbleIcon from "@assets/generated_images/Water_bubble_speech_balloon_5acc91f2.png";
+import bubbleIcon from "@assets/generated_images/Glossy_bubble_with_help_text_5024c988.png";
 
 interface Message {
   role: "user" | "assistant";
@@ -79,25 +79,27 @@ export default function ChatWidget() {
     <>
       {/* Floating Chat Button */}
       {!isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 flex flex-col items-center">
+        <div className="fixed bottom-6 right-6 z-50 flex flex-col items-center gap-1">
           {/* Water Bubble with Text */}
-          <div className="mb-2 relative animate-float">
-            <div className="bg-gradient-to-br from-blue-100/90 via-white/95 to-blue-50/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg border border-white/60 relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent rounded-full"></div>
-              <p className="text-sm font-bold text-black relative z-10">Here to help!</p>
-            </div>
+          <div className="relative animate-pulse-soft">
+            <img 
+              src={bubbleIcon} 
+              alt="Here to help!" 
+              className="w-32 h-24 object-contain drop-shadow-lg"
+            />
           </div>
           
-          {/* Bee Icon Button */}
+          {/* Bee Icon Button - No Background */}
           <button
             onClick={() => setIsOpen(true)}
-            className="transition-all duration-300 hover:scale-110 group"
+            className="transition-all duration-300 hover:scale-110 group -mt-2"
             data-testid="chat-widget-button"
           >
             <img 
               src={beeIcon} 
               alt="FlyQ Assistant" 
-              className="w-32 h-32 object-contain drop-shadow-2xl group-hover:drop-shadow-[0_0_25px_rgba(234,179,8,0.6)]"
+              className="w-32 h-32 object-contain drop-shadow-2xl group-hover:drop-shadow-[0_0_30px_rgba(234,179,8,0.7)] [mix-blend-mode:multiply]"
+              style={{ filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.1))' }}
             />
           </button>
         </div>
