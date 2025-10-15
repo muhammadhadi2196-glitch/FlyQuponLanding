@@ -81,14 +81,13 @@ export default function ChatWidget() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-50 transition-all duration-300 hover:scale-110 group"
+          className="fixed bottom-6 right-6 w-20 h-20 rounded-full bg-white shadow-2xl z-50 transition-all duration-300 hover:scale-110 hover:shadow-[0_0_40px_rgba(234,179,8,0.6)] flex items-center justify-center p-3 border-2 border-yellow-400/30 group"
           data-testid="chat-widget-button"
         >
           <img 
             src={beeIcon} 
             alt="FlyQ Assistant" 
-            className="w-32 h-32 object-contain drop-shadow-2xl group-hover:drop-shadow-[0_0_30px_rgba(234,179,8,0.7)] [mix-blend-mode:multiply]"
-            style={{ filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.1))' }}
+            className="w-full h-full object-contain"
           />
         </button>
       )}
