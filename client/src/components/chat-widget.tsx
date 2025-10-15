@@ -79,30 +79,18 @@ export default function ChatWidget() {
     <>
       {/* Floating Chat Button */}
       {!isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 flex flex-col items-center gap-1">
-          {/* Water Bubble with Text */}
-          <div className="relative animate-pulse-soft">
-            <img 
-              src={bubbleIcon} 
-              alt="Here to help!" 
-              className="w-32 h-24 object-contain drop-shadow-lg"
-            />
-          </div>
-          
-          {/* Bee Icon Button - No Background */}
-          <button
-            onClick={() => setIsOpen(true)}
-            className="transition-all duration-300 hover:scale-110 group -mt-2"
-            data-testid="chat-widget-button"
-          >
-            <img 
-              src={beeIcon} 
-              alt="FlyQ Assistant" 
-              className="w-32 h-32 object-contain drop-shadow-2xl group-hover:drop-shadow-[0_0_30px_rgba(234,179,8,0.7)] [mix-blend-mode:multiply]"
-              style={{ filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.1))' }}
-            />
-          </button>
-        </div>
+        <button
+          onClick={() => setIsOpen(true)}
+          className="fixed bottom-6 right-6 z-50 transition-all duration-300 hover:scale-110 group"
+          data-testid="chat-widget-button"
+        >
+          <img 
+            src={beeIcon} 
+            alt="FlyQ Assistant" 
+            className="w-32 h-32 object-contain drop-shadow-2xl group-hover:drop-shadow-[0_0_30px_rgba(234,179,8,0.7)] [mix-blend-mode:multiply]"
+            style={{ filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.1))' }}
+          />
+        </button>
       )}
 
       {/* Chat Window */}
