@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { apiRequest } from "@/lib/queryClient";
 import beeIcon from "@assets/logo bee_1760503297478.png";
+import bubbleIcon from "@assets/generated_images/Water_bubble_speech_balloon_5acc91f2.png";
 
 interface Message {
   role: "user" | "assistant";
@@ -16,7 +17,7 @@ export default function ChatWidget() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "Hi! 👋 I'm FlyQ, your FlyQupon assistant. Ask me anything about our digital coupon platform!"
+      content: "Hey there! 🐝 I'm FlyQ — here to help you find the sweetest food deals in Calgary!"
     }
   ]);
   const [input, setInput] = useState("");
@@ -78,17 +79,28 @@ export default function ChatWidget() {
     <>
       {/* Floating Chat Button */}
       {!isOpen && (
-        <button
-          onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 h-24 w-24 rounded-full bg-white shadow-2xl z-50 transition-all duration-300 hover:scale-110 hover:shadow-[0_0_40px_rgba(234,179,8,0.6)] flex items-center justify-center p-3 border-2 border-yellow-400/30"
-          data-testid="chat-widget-button"
-        >
-          <img 
-            src={beeIcon} 
-            alt="FlyQ Assistant" 
-            className="w-[85%] h-[85%] object-contain"
-          />
-        </button>
+        <div className="fixed bottom-6 right-6 z-50 flex flex-col items-center">
+          {/* Water Bubble with Text */}
+          <div className="mb-2 relative animate-float">
+            <div className="bg-gradient-to-br from-blue-100/90 via-white/95 to-blue-50/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg border border-white/60 relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent rounded-full"></div>
+              <p className="text-sm font-bold text-black relative z-10">Here to help!</p>
+            </div>
+          </div>
+          
+          {/* Bee Icon Button */}
+          <button
+            onClick={() => setIsOpen(true)}
+            className="transition-all duration-300 hover:scale-110 group"
+            data-testid="chat-widget-button"
+          >
+            <img 
+              src={beeIcon} 
+              alt="FlyQ Assistant" 
+              className="w-32 h-32 object-contain drop-shadow-2xl group-hover:drop-shadow-[0_0_25px_rgba(234,179,8,0.6)]"
+            />
+          </button>
+        </div>
       )}
 
       {/* Chat Window */}
