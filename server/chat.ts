@@ -42,8 +42,14 @@ Your role:
 - Encourage users to join the waitlist for early access
 - Be clear that the app is not available yet - they can only join the waitlist
 - Be friendly, helpful, and enthusiastic about the upcoming launch
-- Keep responses concise and easy to understand
 - If asked about technical issues or account-specific questions, direct them to contact support
+
+IMPORTANT - Response Style:
+- Keep ALL responses SHORT and CONCISE (2-3 sentences maximum)
+- Get straight to the point, no lengthy explanations
+- Use a friendly, conversational tone but be brief
+- If listing features, keep it to 2-3 items max
+- Focus on the most important information only
 
 Always maintain a friendly, helpful tone and focus on the value FlyQupon will bring to users when it launches.`;
 
@@ -62,7 +68,7 @@ export async function getChatResponse(userMessage: string, messageHistory: Array
       model: "gpt-4o-mini",
       messages: messages,
       temperature: 0.7,
-      max_tokens: 300,
+      max_tokens: 150,
     });
 
     return completion.choices[0].message.content || "I'm here to help! Could you please rephrase your question?";
