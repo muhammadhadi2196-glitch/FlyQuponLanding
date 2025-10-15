@@ -97,11 +97,13 @@ export default function ChatWidget() {
           {/* Header */}
           <div className="bg-primary text-primary-foreground p-4 rounded-t-2xl flex justify-between items-center">
             <div className="flex items-center gap-3">
-              <img 
-                src={beeIcon} 
-                alt="FlyQ" 
-                className="w-10 h-10 object-contain"
-              />
+              <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center p-1.5 shadow-md">
+                <img 
+                  src={beeIcon} 
+                  alt="FlyQ" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
               <div>
                 <h3 className="font-bold text-lg">FlyQ</h3>
                 <p className="text-sm text-primary-foreground/80">Ask me anything!</p>
